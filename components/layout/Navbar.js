@@ -13,7 +13,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const isActive = (href) => pathname === href || (href !== "/" && pathname.startsWith(href));
   return (
-    <nav className="h-16 flex items-center">
+    <nav className="h-16 flex items-center bg-black">
       <div className="relative flex w-full items-center">
         <div className="flex items-center gap-3">
           <Link href="/" className={`${playfair.className} text-2xl leading-none text-white`}>

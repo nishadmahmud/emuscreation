@@ -15,13 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Emu’s Creation",
-  description: "Professional video editing studio — Weddings, Reels, YouTube & more.",
+  description:
+    "Professional video editing studio — Weddings, Reels, YouTube & more.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0E0F12] text-neutral-100`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0E0F12] text-neutral-100`}
+      >
         <div className="min-h-screen flex flex-col">
           <header className="sticky top-0 z-50 border-b border-white/10 bg-transparent">
             <div className="mx-auto w-full max-w-7xl px-4">
@@ -29,9 +32,7 @@ export default function RootLayout({ children }) {
             </div>
           </header>
           <main className="flex-1">
-            <div className="mx-auto w-full max-w-7xl px-4 py-8">
-              {children}
-            </div>
+            <div className="mx-auto w-full max-w-7xl px-4 py-8">{children}</div>
           </main>
           <footer className="mt-12 border-t border-white/10">
             <div className="mx-auto w-full max-w-7xl px-4 py-8">
