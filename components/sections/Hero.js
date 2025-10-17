@@ -1,3 +1,7 @@
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
 export default function Hero() {
 return (
 <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -20,26 +24,65 @@ return (
 
   {/* Content */}
   <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:py-28 md:py-36">
-    <div className="max-w-3xl">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white">
+    <motion.div 
+      initial={{ opacity: 0, y: 24, scale: 0.95 }} 
+      animate={{ opacity: 1, y: 0, scale: 1 }} 
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }} 
+      className="max-w-3xl"
+    >
+      <motion.h1 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white"
+      >
         Professional Video Editing, Done Right.
-      </h1>
-      <p className="mt-4 text-base sm:text-lg text-white/80 max-w-2xl">
+      </motion.h1>
+      <motion.p 
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        className="mt-4 text-base sm:text-lg text-white/80 max-w-2xl"
+      >
         Weddings, Reels, YouTube & Travel — cinematic edits with crisp color and clean sound.
-      </p>
-      <div className="mt-8 flex flex-col sm:flex-row gap-3">
-        <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#D4A514] text-black px-6 py-3 font-medium">
+      </motion.p>
+      <motion.div 
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="mt-8 flex flex-col sm:flex-row gap-3"
+      >
+        <motion.a 
+          whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(212, 165, 20, 0.3)" }}
+          whileTap={{ scale: 0.98 }}
+          href="/contact" 
+          className="inline-flex items-center justify-center rounded-full bg-[#D4A514] text-black px-6 py-3 font-medium transition-all duration-300"
+        >
           Get a Quote
-        </a>
-        <a href="/portfolio" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-white hover:bg-white/15">
+        </motion.a>
+        <motion.a 
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+          whileTap={{ scale: 0.98 }}
+          href="/portfolio" 
+          className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-white transition-all duration-300"
+        >
           View Portfolio
-        </a>
-      </div>
-      <div className="mt-6 flex items-center gap-3 text-white/70 text-sm">
-        <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+        </motion.a>
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.4 }}
+        className="mt-6 flex items-center gap-3 text-white/70 text-sm"
+      >
+        <motion.span 
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="inline-flex h-2 w-2 rounded-full bg-emerald-400"
+        />
         <span>Trusted by global clients — on-time delivery</span>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </div>
 </section>
 );
