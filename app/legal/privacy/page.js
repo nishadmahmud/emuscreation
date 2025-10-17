@@ -12,7 +12,7 @@ return (
   <div className="mt-8 space-y-8 text-white/80">
     <section className="space-y-3">
       <h2 className="text-xl font-semibold text-white">Introduction</h2>
-      <p>Emu’s Creation ("we", "us", "our") is committed to protecting your privacy. This Policy explains what information we collect, how we use it, and your rights.</p>
+      <p>Emu’s Creation is committed to protecting your privacy. This Policy explains what information we collect, how we use it, and your rights.</p>
     </section>
 
     <section className="space-y-3">
