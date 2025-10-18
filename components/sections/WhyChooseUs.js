@@ -46,7 +46,7 @@ const features = [
     icon: FaRedo,
     iconColor: "text-indigo-400",
     title: "Unlimited Revisions",
-    description: "We're not satisfied until you are. Comprehensive revision policy ensures your vision comes to life.",
+    description: "We&apos;re not satisfied until you are. Comprehensive revision policy ensures your vision comes to life.",
     color: "from-indigo-500/20 to-purple-500/20",
     borderColor: "border-indigo-500/30"
   },
@@ -71,10 +71,10 @@ return (
     className="text-center mb-12"
   >
     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-      Why Choose <span className="text-[#D4A514]">Emu's Creation</span>?
+      Why Choose <span className="text-[#D4A514]">Emu&apos;s Creation</span>?
     </h2>
     <p className="text-white/70 text-lg max-w-2xl mx-auto">
-      We don't just edit videos – we craft cinematic experiences that tell your story with precision and passion.
+      We don&apos;t just edit videos – we craft cinematic experiences that tell your story with precision and passion.
     </p>
   </motion.div>
 
