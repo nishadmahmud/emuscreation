@@ -20,7 +20,7 @@ const services = [
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
     gradient: "bg-gradient-to-br from-pink-500/10 to-rose-500/10",
-    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=500&fit=crop&crop=center",
+    image: "https://cdn.pixabay.com/photo/2016/11/18/22/21/bride-1837148_1280.jpg",
     priority: true
   },
   { 
@@ -32,7 +32,7 @@ const services = [
     color: "from-blue-500/20 to-indigo-500/20",
     borderColor: "border-blue-500/30",
     gradient: "bg-gradient-to-br from-blue-500/10 to-indigo-500/10",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop&crop=center",
+    image: "https://cdn.pixabay.com/photo/2023/05/16/10/25/car-7997201_1280.jpg",
     priority: true
   },
   { 
@@ -44,7 +44,7 @@ const services = [
     color: "from-red-500/20 to-orange-500/20",
     borderColor: "border-red-500/30",
     gradient: "bg-gradient-to-br from-red-500/10 to-orange-500/10",
-    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=500&fit=crop&crop=center",
+    image: "https://cdn.pixabay.com/photo/2022/02/21/06/42/tablet-7025900_1280.jpg",
     priority: false
   },
   { 
@@ -56,19 +56,19 @@ const services = [
     color: "from-emerald-500/20 to-teal-500/20",
     borderColor: "border-emerald-500/30",
     gradient: "bg-gradient-to-br from-emerald-500/10 to-teal-500/10",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=500&fit=crop&crop=center",
+    image: "https://cdn.pixabay.com/photo/2022/10/07/08/59/sky-7504583_1280.jpg",
     priority: false
   },
   { 
     href: "/services/corporate", 
-    title: "Corporate/Docu", 
-    desc: "Promo, docu, and internal communications.",
+    title: "Corporate/Documentary", 
+    desc: "Promo, documentaries and internal communications.",
     icon: FaBuilding,
     iconColor: "text-slate-400",
     color: "from-slate-500/20 to-gray-500/20",
     borderColor: "border-slate-500/30",
     gradient: "bg-gradient-to-br from-slate-500/10 to-gray-500/10",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=500&fit=crop&crop=center",
+    image: "https://cdn.pixabay.com/photo/2018/03/27/21/43/startup-3267505_1280.jpg",
     priority: false
   },
 ];

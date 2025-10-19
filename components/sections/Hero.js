@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function Hero() {
 return (
-<section className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+<section className="relative overflow-hidden rounded-2xl border border-white/10 bg-transparent">
   {/* Background video */}
   <div className="absolute inset-0 -z-10">
     <video
       className="h-full w-full object-cover"
-      src="/videos/showreel.mp4"
-      poster="/images/showreel-poster.jpg"
+      src="https://cdn.pixabay.com/video/2023/11/21/189998-887067364_large.mp4"
+      poster="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg"
       autoPlay
       muted
       loop
@@ -19,7 +19,7 @@ return (
       aria-hidden
     />
     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0E0F12]" />
-    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0E0F12] to-transparent" />
+    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0E0F12] to-transparent" />
   </div>
 
   {/* Content */}
