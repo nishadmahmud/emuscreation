@@ -100,8 +100,8 @@ return (
       visible: { 
         opacity: 1, 
         transition: { 
-          staggerChildren: 0.12,
-          delayChildren: 0.2
+          staggerChildren: 0.08,
+          delayChildren: 0.1
         } 
       } 
     }} 
@@ -115,31 +115,26 @@ return (
           variants={{ 
             hidden: { 
               opacity: 0, 
-              y: 30, 
-              scale: 0.9,
-              rotateX: -10
+              y: 20
             }, 
             visible: { 
               opacity: 1, 
-              y: 0, 
-              scale: 1,
-              rotateX: 0,
+              y: 0,
               transition: { 
-                duration: 0.7,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 0.4,
+                ease: "easeOut"
               }
             } 
           }}
           whileHover={{ 
-            y: -8,
-            scale: 1.02,
-            transition: { duration: 0.3 }
+            y: -4,
+            transition: { duration: 0.2 }
           }}
           className="group"
         >
           <Link 
             href={service.href} 
-            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-500 min-h-[320px]`}
+            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[320px]`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -148,7 +143,7 @@ return (
                 alt={service.title}
                 fill
                 unoptimized
-                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500"
+                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -156,7 +151,7 @@ return (
             
             {/* Animated background gradient */}
             <motion.div 
-              className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+              className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
               initial={{ scale: 0.8, opacity: 0 }}
               whileHover={{ scale: 1.1, opacity: 1 }}
             />
@@ -168,25 +163,25 @@ return (
                   <motion.div 
                     className={`text-5xl ${service.iconColor} drop-shadow-lg`}
                     whileHover={{ 
-                      scale: 1.1,
-                      transition: { duration: 0.2 }
+                      scale: 1.05,
+                      transition: { duration: 0.15 }
                     }}
                   >
                     <service.icon />
                   </motion.div>
                   <motion.span 
                     className="text-white/60 group-hover:text-white transition-colors text-3xl"
-                    whileHover={{ x: 4, scale: 1.1 }}
+                    whileHover={{ x: 2, scale: 1.05 }}
                   >
                     →
                   </motion.span>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#D4A514] transition-colors duration-300 drop-shadow-md">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-md">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/90 text-base leading-relaxed group-hover:text-white transition-colors duration-300 drop-shadow-sm">
+                <p className="text-white/90 text-base leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-sm">
                   {service.desc}
                 </p>
               </div>
@@ -235,31 +230,26 @@ return (
           variants={{ 
             hidden: { 
               opacity: 0, 
-              y: 30, 
-              scale: 0.9,
-              rotateX: -10
+              y: 20
             }, 
             visible: { 
               opacity: 1, 
-              y: 0, 
-              scale: 1,
-              rotateX: 0,
+              y: 0,
               transition: { 
-                duration: 0.7,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 0.4,
+                ease: "easeOut"
               }
             } 
           }}
           whileHover={{ 
-            y: -8,
-            scale: 1.02,
-            transition: { duration: 0.3 }
+            y: -4,
+            transition: { duration: 0.2 }
           }}
           className="group"
         >
           <Link 
             href={service.href} 
-            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-500 min-h-[280px]`}
+            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[280px]`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -268,7 +258,7 @@ return (
                 alt={service.title}
                 fill
                 unoptimized
-                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500"
+                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -276,7 +266,7 @@ return (
             
             {/* Animated background gradient */}
             <motion.div 
-              className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+              className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
               initial={{ scale: 0.8, opacity: 0 }}
               whileHover={{ scale: 1.1, opacity: 1 }}
             />
@@ -288,25 +278,25 @@ return (
                   <motion.div 
                     className={`text-4xl ${service.iconColor} drop-shadow-lg`}
                     whileHover={{ 
-                      scale: 1.1,
-                      transition: { duration: 0.2 }
+                      scale: 1.05,
+                      transition: { duration: 0.15 }
                     }}
                   >
                     <service.icon />
                   </motion.div>
                   <motion.span 
                     className="text-white/60 group-hover:text-white transition-colors text-2xl"
-                    whileHover={{ x: 4, scale: 1.1 }}
+                    whileHover={{ x: 2, scale: 1.05 }}
                   >
                     →
                   </motion.span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-300 drop-shadow-md">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-md">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-300 drop-shadow-sm">
+                <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-sm">
                   {service.desc}
                 </p>
               </div>

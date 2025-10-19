@@ -87,8 +87,8 @@ return (
       visible: { 
         opacity: 1, 
         transition: { 
-          staggerChildren: 0.15,
-          delayChildren: 0.2
+          staggerChildren: 0.08,
+          delayChildren: 0.1
         } 
       } 
     }} 
@@ -100,31 +100,26 @@ return (
         variants={{ 
           hidden: { 
             opacity: 0, 
-            y: 30, 
-            scale: 0.9,
-            rotateX: -10
+            y: 20
           }, 
           visible: { 
             opacity: 1, 
-            y: 0, 
-            scale: 1,
-            rotateX: 0,
+            y: 0,
             transition: { 
-              duration: 0.7,
-              ease: [0.25, 0.46, 0.45, 0.94]
+              duration: 0.4,
+              ease: "easeOut"
             }
           } 
         }}
         whileHover={{ 
-          y: -8,
-          scale: 1.02,
-          transition: { duration: 0.3 }
+          y: -4,
+          transition: { duration: 0.2 }
         }}
-        className={`group relative overflow-hidden rounded-2xl border ${feature.borderColor} bg-gradient-to-br ${feature.color} backdrop-blur-sm p-6 hover:shadow-2xl transition-all duration-500`}
+        className={`group relative overflow-hidden rounded-2xl border ${feature.borderColor} bg-gradient-to-br ${feature.color} backdrop-blur-sm p-6 hover:shadow-2xl transition-all duration-300`}
       >
         {/* Animated background gradient */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={{ scale: 0.8, opacity: 0 }}
           whileHover={{ scale: 1.1, opacity: 1 }}
         />
@@ -134,18 +129,18 @@ return (
           <motion.div 
             className={`text-3xl ${feature.iconColor} mb-4`}
             whileHover={{ 
-              scale: 1.1,
-              transition: { duration: 0.2 }
+              scale: 1.05,
+              transition: { duration: 0.15 }
             }}
           >
             <feature.icon />
           </motion.div>
           
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-300">
+          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-200">
             {feature.title}
           </h3>
           
-          <p className="text-white/80 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+          <p className="text-white/80 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-200">
             {feature.description}
           </p>
         </div>
