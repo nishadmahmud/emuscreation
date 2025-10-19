@@ -5,7 +5,7 @@ import { FaStar, FaQuoteLeft, FaGlobe, FaHeart } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    quote: "Emu's Creation transformed our wedding footage into a cinematic masterpiece. The storytelling and color grading were absolutely perfect. We couldn't be happier!",
+    quote: "Emu&apos;s Creation transformed our wedding footage into a cinematic masterpiece. The storytelling and color grading were absolutely perfect. We couldn&apos;t be happier!",
     name: "Sarah & Michael",
     business: "Wedding Couple",
     country: "USA",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "Our YouTube channel exploded after working with Emu's Creation. The editing style perfectly matches our brand, and the turnaround time is incredible.",
+    quote: "Our YouTube channel exploded after working with Emu&apos;s Creation. The editing style perfectly matches our brand, and the turnaround time is incredible.",
     name: "Alex Chen",
     business: "Travel Vlogger",
     country: "Canada",
@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     id: 5,
-    quote: "Working with Emu's Creation has been a game-changer for our travel content. Their cinematic approach brings our adventures to life beautifully.",
+    quote: "Working with Emu&apos;s Creation has been a game-changer for our travel content. Their cinematic approach brings our adventures to life beautifully.",
     name: "Emma Thompson",
     business: "Travel Blogger",
     country: "Australia",
@@ -81,7 +81,7 @@ export default function SocialProof() {
           Trusted by <span className="text-[#D4A514]">Creators Worldwide</span>
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mx-auto">
-          Join hundreds of satisfied clients who've transformed their content with our professional editing services.
+          Join hundreds of satisfied clients who&apos;ve transformed their content with our professional editing services.
         </p>
       </motion.div>
 
@@ -172,7 +172,7 @@ export default function SocialProof() {
 
             {/* Quote */}
             <blockquote className="text-white/90 text-sm leading-relaxed mb-6 group-hover:text-white transition-colors duration-200">
-              "{testimonial.quote}"
+            &quot;{testimonial.quote}&quot;
             </blockquote>
 
             {/* Client Info */}
