@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaPlay, FaExternalLinkAlt, FaHeart, FaEye } from "react-icons/fa";
+import Image from "next/image";
 
 const featuredProjects = [
   {
@@ -148,10 +149,13 @@ export default function FeaturedWork() {
           >
             {/* Thumbnail */}
             <div className="relative aspect-video overflow-hidden">
-              <img
+              <Image
                 src={project.thumbnail}
                 alt={project.title}
+                width={600}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                unoptimized
               />
               
               {/* Overlay */}
