@@ -99,6 +99,12 @@ export default function Navbar() {
               <motion.div layoutId="nav-underline" className="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-[#D4A514] rounded-full" transition={{ type: "spring", stiffness: 500, damping: 40 }} />
             ) : null}
           </span>
+          {/* <span className="relative pb-1">
+            <Link href="/contact" aria-current={isActive("/contact") ? "page" : undefined} className={isActive("/contact") ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}>Contact</Link>
+            {isActive("/contact") ? (
+              <motion.div layoutId="nav-underline" className="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-[#D4A514] rounded-full" transition={{ type: "spring", stiffness: 500, damping: 40 }} />
+            ) : null}
+          </span> */}
           <span className="relative pb-1">
             <Link href="/blog" aria-current={isActive("/blog") ? "page" : undefined} className={isActive("/blog") ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}>Blog</Link>
             {isActive("/blog") ? (
@@ -148,6 +154,7 @@ export default function Navbar() {
             <Link href="/process" className={isActive("/process") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Process</Link>
             <Link href="/about" className={isActive("/about") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>About</Link>
             <Link href="/testimonials" className={isActive("/testimonials") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Testimonials</Link>
+            <Link href="/contact" className={isActive("/contact") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Contact</Link>
             <Link href="/faq" className={isActive("/faq") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>FAQ</Link>
             <Link href="/blog" className={isActive("/blog") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Blog</Link>
             
