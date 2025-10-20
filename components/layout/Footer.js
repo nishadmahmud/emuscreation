@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
+          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-primary)] mb-3">
             Pages
           </div>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
+          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-primary)] mb-3">
             Services
           </div>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
@@ -122,7 +122,7 @@ export default function Footer() {
 
         <div className="md:col-span-2 space-y-4">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
+            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-primary)] mb-3">
               Contact
             </div>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
@@ -144,7 +144,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
+            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-primary)] mb-3">
               Follow
             </div>
             <ul className="flex gap-3">
