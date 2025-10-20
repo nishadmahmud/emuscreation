@@ -98,10 +98,10 @@ export default function FeaturedWork() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
           Featured <span className="text-[#D4A514]">Work</span>
         </h2>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto">
+        <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
           Explore our portfolio of cinematic edits that have captivated audiences worldwide.
         </p>
       </motion.div>
@@ -121,7 +121,7 @@ export default function FeaturedWork() {
             className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-150 ${
               activeCategory === category
                 ? "bg-[#D4A514] text-black"
-                : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/20"
+                : "bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:bg-[var(--bg-elevated)]/80 hover:text-[var(--text-primary)] border border-[var(--border-subtle)]"
             }`}
           >
             {category}
@@ -144,7 +144,7 @@ export default function FeaturedWork() {
             }}
             onHoverStart={() => setHoveredProject(project.id)}
             onHoverEnd={() => setHoveredProject(null)}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-[#D4A514]/30 transition-all duration-200 hover:shadow-lg"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-200 hover:shadow-lg"
           >
             {/* Thumbnail */}
             <div className="relative aspect-video overflow-hidden">
@@ -188,24 +188,24 @@ export default function FeaturedWork() {
             {/* Content */}
             <div className="p-6">
               <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-bold text-white group-hover:text-[#D4A514] transition-colors duration-300">
+                <h3 className="text-lg font-bold text-[var(--text-primary)] group-hover:text-[#D4A514] transition-colors duration-300">
                   {project.title}
                 </h3>
                 <motion.a
                   href={project.videoUrl}
                   whileHover={{ scale: 1.1 }}
-                  className="text-white/60 hover:text-[#D4A514] transition-colors"
+                  className="text-[var(--text-secondary)] hover:text-[#D4A514] transition-colors"
                 >
                   <FaExternalLinkAlt className="text-sm" />
                 </motion.a>
               </div>
 
-              <p className="text-white/70 text-sm leading-relaxed mb-4">
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
                 {project.description}
               </p>
 
               {/* Stats */}
-              <div className="flex items-center justify-between text-xs text-white/60">
+              <div className="flex items-center justify-between text-xs text-[var(--text-secondary)]">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
                     <FaEye />
@@ -216,7 +216,7 @@ export default function FeaturedWork() {
                     <span>{project.likes}</span>
                   </div>
                 </div>
-                <span className="bg-white/10 px-2 py-1 rounded text-xs">
+                <span className="bg-[var(--bg-elevated)] px-2 py-1 rounded text-xs">
                   {project.category}
                 </span>
               </div>
@@ -228,7 +228,7 @@ export default function FeaturedWork() {
             animate={{ opacity: 1, y: 0 }}
             className="col-span-full text-center py-12"
           >
-            <div className="text-white/60 text-lg">
+            <div className="text-[var(--text-secondary)] text-lg">
               {/* No projects found for "{activeCategory}" category. */}
             </div>
             <motion.button

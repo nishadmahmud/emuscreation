@@ -47,10 +47,10 @@ export default function MiniProcess() {
         transition={{ duration: 0.4 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
           Our <span className="text-[#D4A514]">Process</span>
         </h2>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto">
+        <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
           Share your brief → Upload footage → First cut in days → Revisions → Final master.
         </p>
       </motion.div>
@@ -77,7 +77,7 @@ export default function MiniProcess() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
             }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm p-6 transition-all duration-300 hover:shadow-lg hover:border-[#D4A514]/30"
+            className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm p-6 transition-all duration-300 hover:shadow-lg hover:border-[#D4A514]/30"
           >
             {/* Index badge */}
             <div className="absolute -top-3 -left-3 h-10 w-10 rounded-xl bg-[#D4A514]/20 border border-[#D4A514]/40 flex items-center justify-center text-[#D4A514] font-bold">
@@ -90,12 +90,12 @@ export default function MiniProcess() {
             </div>
 
             {/* Title */}
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#D4A514] transition-colors duration-200">
+            <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[#D4A514] transition-colors duration-200">
               {step.title}
             </h3>
 
             {/* Description */}
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
               {step.description}
             </p>
           </motion.li>

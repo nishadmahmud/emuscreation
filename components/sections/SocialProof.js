@@ -5,7 +5,7 @@ import { FaStar, FaQuoteLeft, FaGlobe, FaHeart } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    quote: "Emu&apos;s Creation transformed our wedding footage into a cinematic masterpiece. The storytelling and color grading were absolutely perfect. We couldn&apos;t be happier!",
+    quote: "Emu's Creation transformed our wedding footage into a cinematic masterpiece. The storytelling and color grading were absolutely perfect. We couldn't be happier!",
     name: "Sarah & Michael",
     business: "Wedding Couple",
     country: "USA",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "Our YouTube channel exploded after working with Emu&apos;s Creation. The editing style perfectly matches our brand, and the turnaround time is incredible.",
+    quote: "Our YouTube channel exploded after working with Emu's Creation. The editing style perfectly matches our brand, and the turnaround time is incredible.",
     name: "Alex Chen",
     business: "Travel Vlogger",
     country: "Canada",
@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     id: 5,
-    quote: "Working with Emu&apos;s Creation has been a game-changer for our travel content. Their cinematic approach brings our adventures to life beautifully.",
+    quote: "Working with Emu's Creation has been a game-changer for our travel content. Their cinematic approach brings our adventures to life beautifully.",
     name: "Emma Thompson",
     business: "Travel Blogger",
     country: "Australia",
@@ -77,10 +77,10 @@ export default function SocialProof() {
         transition={{ duration: 0.4 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
           Trusted by <span className="text-[#D4A514]">Creators Worldwide</span>
         </h2>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto">
+        <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
           Join hundreds of satisfied clients who&apos;ve transformed their content with our professional editing services.
         </p>
       </motion.div>
@@ -113,13 +113,13 @@ export default function SocialProof() {
                 transition: { duration: 0.4, ease: "easeOut" }
               } 
             }}
-            className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-[#D4A514]/30 transition-all duration-300"
+            className="text-center p-6 rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-300"
           >
             <div className="text-[#D4A514] text-3xl mb-3">
               <stat.icon />
             </div>
-            <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-            <div className="text-white/70 text-sm">{stat.label}</div>
+            <div className="text-3xl font-bold text-[var(--text-primary)] mb-2">{stat.number}</div>
+            <div className="text-[var(--text-secondary)] text-sm">{stat.label}</div>
           </motion.div>
         ))}
       </motion.div>
@@ -156,7 +156,7 @@ export default function SocialProof() {
               y: -4,
               transition: { duration: 0.2 }
             }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-[#D4A514]/30 p-6 transition-all duration-300 hover:shadow-lg"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 p-6 transition-all duration-300 hover:shadow-lg"
           >
             {/* Quote Icon */}
             <div className="absolute top-4 right-4 text-[#D4A514]/30 text-2xl">
@@ -171,23 +171,23 @@ export default function SocialProof() {
             </div>
 
             {/* Quote */}
-            <blockquote className="text-white/90 text-sm leading-relaxed mb-6 group-hover:text-white transition-colors duration-200">
+            <blockquote className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6 group-hover:text-[var(--text-primary)] transition-colors duration-200">
             &quot;{testimonial.quote}&quot;
             </blockquote>
 
             {/* Client Info */}
-            <div className="border-t border-white/10 pt-4">
+            <div className="border-t border-[var(--border-subtle)] pt-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-semibold text-white text-sm group-hover:text-[#D4A514] transition-colors duration-200">
+                  <div className="font-semibold text-[var(--text-primary)] text-sm group-hover:text-[#D4A514] transition-colors duration-200">
                     {testimonial.name}
                   </div>
-                  <div className="text-white/60 text-xs">
+                  <div className="text-[var(--text-secondary)] text-xs">
                     {testimonial.business}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-white/60 text-xs mb-1">
+                  <div className="text-[var(--text-secondary)] text-xs mb-1">
                     {testimonial.country}
                   </div>
                   <div className="text-[#D4A514] text-xs font-medium">
@@ -230,12 +230,12 @@ export default function SocialProof() {
           >
             ⭐
           </motion.span>
-          <span className="text-white font-medium text-lg">Ready to join our satisfied clients?</span>
+          <span className="text-[var(--text-primary)] font-medium text-lg">Ready to join our satisfied clients?</span>
           <motion.a 
             href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-[#D4A514] hover:text-white transition-colors font-semibold text-lg"
+            className="text-[#D4A514] hover:text-[var(--text-primary)] transition-colors font-semibold text-lg"
           >
             Start Your Project →
           </motion.a>

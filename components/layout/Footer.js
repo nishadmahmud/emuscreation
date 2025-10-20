@@ -10,28 +10,28 @@ const playfair = Playfair_Display({
 
 export default function Footer() {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur px-6 py-8 md:px-10 md:py-10">
+    <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] backdrop-blur px-6 py-8 md:px-10 md:py-10">
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4 space-y-4">
           <div
-            className={`${playfair.className} text-2xl font-semibold tracking-wide bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent`}
+            className={`${playfair.className} text-2xl font-semibold tracking-wide bg-gradient-to-r from-[var(--text-primary)] to-[var(--text-secondary)] bg-clip-text text-transparent`}
           >
             Emu’s Creation
           </div>
-          <p className="text-sm text-white/70 leading-relaxed">
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
             Professional video editing studio. Cinematic edits, crisp color,
             clean sound - delivered on time.
           </p>
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
+          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
             Pages
           </div>
-          <ul className="space-y-2 text-sm text-white/80">
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/portfolio"
               >
                 Portfolio
@@ -39,7 +39,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/pricing"
               >
                 Pricing & Packages
@@ -47,7 +47,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/process"
               >
                 Process
@@ -55,7 +55,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/blog"
               >
                 Blog
@@ -63,7 +63,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/contact"
               >
                 Get a Quote
@@ -73,13 +73,13 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
+          <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
             Services
           </div>
-          <ul className="space-y-2 text-sm text-white/80">
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/services/wedding"
               >
                 Wedding Editing
@@ -87,7 +87,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/services/reels"
               >
                 Reels & Short-Form
@@ -95,7 +95,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/services/youtube"
               >
                 YouTube Editing
@@ -103,7 +103,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/services/travel"
               >
                 Travel Vlog Editing
@@ -111,7 +111,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                className="hover:text-white hover:underline underline-offset-4"
+                className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
                 href="/services/corporate"
               >
                 Corporate/Documentary
@@ -122,18 +122,18 @@ export default function Footer() {
 
         <div className="md:col-span-2 space-y-4">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
+            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
               Contact
             </div>
-            <ul className="space-y-2 text-sm text-white/80">
+            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
-                <a className="hover:text-white" href="mailto:hello@example.com">
+                <a className="hover:text-[var(--text-primary)]" href="mailto:hello@example.com">
                   hello@example.com
                 </a>
               </li>
               <li>
                 <a
-                  className="hover:text-white"
+                  className="hover:text-[var(--text-primary)]"
                   href="https://wa.me/1234567890"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -144,13 +144,13 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
+            <div className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
               Follow
             </div>
             <ul className="flex gap-3">
               <li>
                 <a
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:bg-white/5 text-white/80 hover:text-[#E1306C]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#E1306C]"
                   href="#"
                   aria-label="Instagram"
                 >
@@ -159,7 +159,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:bg-white/5 text-white/80 hover:text-[#FF0000]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#FF0000]"
                   href="#"
                   aria-label="YouTube"
                 >
@@ -168,7 +168,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:bg-white/5 text-white/80 hover:text-[#1877F2]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#1877F2]"
                   href="#"
                   aria-label="Facebook"
                 >
@@ -180,16 +180,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-white/60">
+      <div className="mt-8 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-[var(--text-secondary)]">
         <div>
           © {new Date().getFullYear()} Emu’s Creation. All rights reserved.
         </div>
         <div className="flex items-center gap-4">
-          <Link className="hover:text-white" href="/legal/privacy">
+          <Link className="hover:text-[var(--text-primary)]" href="/legal/privacy">
             Privacy Policy
           </Link>
-          <span className="text-white/25">•</span>
-          <Link className="hover:text-white" href="/legal/terms">
+          <span className="text-[var(--text-secondary)]/50">•</span>
+          <Link className="hover:text-[var(--text-primary)]" href="/legal/terms">
             Terms
           </Link>
         </div>

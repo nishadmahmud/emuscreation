@@ -83,10 +83,10 @@ return (
     transition={{ duration: 0.6 }}
     className="text-center mb-12"
   >
-    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
       Our <span className="text-[#D4A514]">Services</span>
     </h2>
-    <p className="text-white/70 text-lg max-w-2xl mx-auto">
+    <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
       From intimate weddings to viral reels, we bring your vision to life with professional editing expertise.
     </p>
   </motion.div>
@@ -134,7 +134,7 @@ return (
         >
           <Link 
             href={service.href} 
-            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[320px]`}
+            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[320px] dark:from-black/80 dark:via-black/40 dark:to-black/20`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -143,10 +143,10 @@ return (
                 alt={service.title}
                 fill
                 unoptimized
-                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
+                className="object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-300 dark:opacity-40 dark:group-hover:opacity-50"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent dark:from-black/80 dark:via-black/40 dark:to-black/20" />
             </div>
             
             {/* Animated background gradient */}
@@ -170,18 +170,18 @@ return (
                     <service.icon />
                   </motion.div>
                   <motion.span 
-                    className="text-white/60 group-hover:text-white transition-colors text-3xl"
+                    className="text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors text-3xl"
                     whileHover={{ x: 2, scale: 1.05 }}
                   >
                     →
                   </motion.span>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-md">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-lg">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/90 text-base leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-sm">
+                <p className="text-white/90 text-base leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-md">
                   {service.desc}
                 </p>
               </div>
@@ -249,7 +249,7 @@ return (
         >
           <Link 
             href={service.href} 
-            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[280px]`}
+            className={`block relative overflow-hidden rounded-3xl border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 min-h-[280px] dark:from-black/80 dark:via-black/40 dark:to-black/20`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -258,10 +258,10 @@ return (
                 alt={service.title}
                 fill
                 unoptimized
-                className="object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
+                className="object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-300 dark:opacity-40 dark:group-hover:opacity-50"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent dark:from-black/80 dark:via-black/40 dark:to-black/20" />
             </div>
             
             {/* Animated background gradient */}
@@ -285,18 +285,18 @@ return (
                     <service.icon />
                   </motion.div>
                   <motion.span 
-                    className="text-white/60 group-hover:text-white transition-colors text-2xl"
+                    className="text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors text-2xl"
                     whileHover={{ x: 2, scale: 1.05 }}
                   >
                     →
                   </motion.span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-md">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-200 drop-shadow-lg">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-sm">
+                <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-200 drop-shadow-md">
                   {service.desc}
                 </p>
               </div>
@@ -354,12 +354,12 @@ return (
       >
         🎬
       </motion.span>
-      <span className="text-white font-medium">Ready to start your project?</span>
+      <span className="text-[var(--text-primary)] font-medium">Ready to start your project?</span>
       <motion.a 
         href="/contact"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="text-[#D4A514] hover:text-white transition-colors font-semibold"
+        className="text-[#D4A514] hover:text-[var(--text-primary)] transition-colors font-semibold"
       >
         Get Quote →
       </motion.a>

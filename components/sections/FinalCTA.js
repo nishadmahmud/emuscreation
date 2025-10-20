@@ -22,7 +22,7 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.05 }}
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4"
           >
             Ready to Elevate Your Content?
           </motion.h3>
@@ -31,7 +31,7 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-white/80 text-lg mb-8"
+            className="text-[var(--text-secondary)] text-lg mb-8"
           >
             Get a fast, professional edit with cinematic polish — on time, every time.
           </motion.p>
@@ -40,7 +40,7 @@ export default function FinalCTA() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D4A514] text-black font-semibold hover:shadow-lg transition-all duration-200">
               Get a Quote
             </Link>
-            <Link href="/portfolio" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:border-white/40 transition-all duration-200">
+            <Link href="/portfolio" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] hover:border-[#D4A514]/40 transition-all duration-200">
               View Portfolio
             </Link>
           </div>

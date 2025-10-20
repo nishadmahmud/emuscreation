@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { ThemeProvider } from "../components/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,25 +22,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0E0F12] text-neutral-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--bg-primary)] text-[var(--text-primary)]`}
       >
-        <div className="min-h-screen flex flex-col">
-          <header className="sticky top-0 z-50 border-b border-white/10 bg-transparent">
-            <div className="mx-auto w-full max-w-7xl px-4">
-              <Navbar />
-            </div>
-          </header>
-          <main className="flex-1">
-            <div className="mx-auto w-full max-w-7xl px-4 py-8">{children}</div>
-          </main>
-          <footer className="mt-12 border-t border-white/10">
-            <div className="mx-auto w-full max-w-7xl px-4 py-8">
-              <Footer />
-            </div>
-          </footer>
-        </div>
+        <ThemeProvider>
+          <div className="min-h-screen flex flex-col">
+            <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 backdrop-blur-sm">
+              <div className="mx-auto w-full max-w-7xl px-4">
+                <Navbar />
+              </div>
+            </header>
+            <main className="flex-1">
+              <div className="mx-auto w-full max-w-7xl px-4 py-8">{children}</div>
+            </main>
+            <footer className="mt-12 border-t border-[var(--border-subtle)]">
+              <div className="mx-auto w-full max-w-7xl px-4 py-8">
+                <Footer />
+              </div>
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

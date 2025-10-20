@@ -70,10 +70,10 @@ return (
     transition={{ duration: 0.6 }}
     className="text-center mb-12"
   >
-    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
       Why Choose <span className="text-[#D4A514]">Emu&apos;s Creation</span>?
     </h2>
-    <p className="text-white/70 text-lg max-w-2xl mx-auto">
+    <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
       We don&apos;t just edit videos – we craft cinematic experiences that tell your story with precision and passion.
     </p>
   </motion.div>
@@ -136,11 +136,11 @@ return (
             <feature.icon />
           </motion.div>
           
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4A514] transition-colors duration-200">
+          <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[#D4A514] transition-colors duration-200">
             {feature.title}
           </h3>
           
-          <p className="text-white/80 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-200">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed group-hover:text-[var(--text-primary)] transition-colors duration-200">
             {feature.description}
           </p>
         </div>
@@ -191,12 +191,12 @@ return (
       >
         ✨
       </motion.span>
-      <span className="text-white font-medium">Ready to elevate your content?</span>
+      <span className="text-[var(--text-primary)] font-medium">Ready to elevate your content?</span>
       <motion.a 
         href="/contact"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="text-[#D4A514] hover:text-white transition-colors font-semibold"
+        className="text-[#D4A514] hover:text-[var(--text-primary)] transition-colors font-semibold"
       >
         Get Started →
       </motion.a>

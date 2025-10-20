@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+/* Theme Variables */
+:root {
+  --bg-primary: #0E0F12;
+  --bg-elevated: #15171B;
+  --text-primary: #F5F7FA;
+  --text-secondary: #C2C8D0;
+  --accent-gold: #D4A514;
+  --accent-red: #E44343;
+  --border-subtle: #2A2E36;
+}
+
+/* Light Theme */
+.light {
+  --bg-primary: #FFFFFF;
+  --bg-elevated: #F8F9FA;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --accent-gold: #D4A514;
+  --accent-red: #E44343;
+  --border-subtle: #E5E7EB;
+}
+
+/* Dark Theme */
+.dark {
+  --bg-primary: #0E0F12;
+  --bg-elevated: #15171B;
+  --text-primary: #F5F7FA;
+  --text-secondary: #C2C8D0;
+  --accent-gold: #D4A514;
+  --accent-red: #E44343;
+  --border-subtle: #2A2E36;
+}
+
+/* Instant theme changes - no transitions for CSS variables */
+html {
+  transition: none !important;
+}
+
+/* Smooth transitions for other elements but exclude theme-related properties */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Disable transitions for elements using CSS variables during theme changes */
+.theme-transitioning * {
+  transition: none !important;
+}
