@@ -39,7 +39,6 @@ const steps = [
 export default function MiniProcess() {
   return (
     <section className="mt-20">
-      {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
