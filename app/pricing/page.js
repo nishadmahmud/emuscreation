@@ -134,7 +134,7 @@ export default function Page() {
               plan.popular
                 ? "border-[#D4A514] bg-[var(--bg-elevated)]/80 shadow-2xl scale-105"
                 : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40"
-            } p-8 transition-all duration-300 hover:shadow-xl hover:scale-105 flex flex-col`}
+            } p-8 transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex flex-col`}
           >
             {/* Popular Badge */}
             {plan.popular && (

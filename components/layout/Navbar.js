@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaBars } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700"], display: "swap" });
@@ -14,7 +14,25 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
+  const menuRef = useRef(null);
   const isActive = (href) => pathname === href || (href !== "/" && pathname.startsWith(href));
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
   return (
     <nav className="h-16 flex items-center bg-[var(--bg-elevated)]">
       <div className="relative flex w-full items-center">
@@ -137,16 +155,17 @@ export default function Navbar() {
           </Link>
         </div>
         <button
+          ref={menuRef}
           className="md:hidden ml-auto inline-flex items-center justify-center rounded border border-[var(--border-subtle)] px-3 py-2 text-sm hover:bg-[var(--bg-elevated)] text-[var(--text-primary)]"
           aria-label="Toggle menu"
           aria-expanded={open ? "true" : "false"}
           onClick={() => setOpen((v) => !v)}
         >
-          Menu
+          <FaBars className="text-lg" />
         </button>
       </div>
       {open ? (
-        <div className="absolute left-0 right-0 top-16 md:hidden border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 backdrop-blur">
+        <div className="absolute left-0 right-0 top-16 md:hidden border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/95 shadow-2xl" style={{backdropFilter: 'blur(40px)'}}>
           <div className="px-4 py-4 flex flex-col gap-3 text-sm">
             <Link href="/services" className={isActive("/services") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Services</Link>
             <Link href="/portfolio" className={isActive("/portfolio") ? "text-[var(--text-primary)] font-semibold" : "text-[var(--text-secondary)]"} onClick={() => setOpen(false)}>Portfolio</Link>
