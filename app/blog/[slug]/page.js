@@ -348,12 +348,14 @@ export default function BlogPost({ params }) {
           editing services.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact#quote"
+          <a
+            href="https://www.fiverr.com/users/mehediemu"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#D4A514] text-black px-6 py-3 rounded-xl font-semibold hover:bg-[#B8941F] transition-all duration-300"
           >
             Get a Quote
-          </Link>
+          </a>
           <Link
             href="/portfolio"
             className="border border-[var(--border-subtle)] text-[var(--text-primary)] px-6 py-3 rounded-xl font-semibold hover:bg-[var(--bg-elevated)]/50 transition-all duration-300"

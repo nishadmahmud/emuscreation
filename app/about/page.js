@@ -140,7 +140,9 @@ export default function Page() {
       <footer className="mt-10 flex flex-wrap items-center gap-3 text-[var(--text-secondary)]">
         Looking to start a project?
         <a
-          href="/contact#quote"
+          href="https://www.fiverr.com/users/mehediemu"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg bg-[#D4A514] text-black px-3 py-1.5 font-medium"
         >
           Get a Quote

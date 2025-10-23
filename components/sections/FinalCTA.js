@@ -37,9 +37,14 @@ export default function FinalCTA() {
           </motion.p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D4A514] text-black font-semibold hover:shadow-lg transition-all duration-200">
+            <a 
+              href="https://www.fiverr.com/users/mehediemu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D4A514] text-black font-semibold hover:shadow-lg transition-all duration-200"
+            >
               Get a Quote
-            </Link>
+            </a>
             <Link href="/portfolio" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] hover:border-[#D4A514]/40 transition-all duration-200">
               View Portfolio
             </Link>

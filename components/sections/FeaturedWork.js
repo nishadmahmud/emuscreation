@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaPlay, FaExternalLinkAlt, FaHeart, FaEye } from "react-icons/fa";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ const featuredProjects = [
     category: "Wedding",
     description: "A romantic destination wedding captured in cinematic style with emotional storytelling.",
     thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    videoUrl: "/wedding.mp4",
     duration: "5:30",
     views: "2.3K",
     likes: "156",
@@ -19,11 +19,11 @@ const featuredProjects = [
   },
   {
     id: 2,
-    title: "Travel Vlog: Bali Adventure",
-    category: "Travel",
-    description: "Epic travel content with stunning drone shots and vibrant color grading.",
-    thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    title: "Documentary Film",
+    category: "Documentary",
+    description: "Documentary Film And Reunion,Its a Sweet past collage reunion documentary",
+    thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/documentary.mp4",
     duration: "8:45",
     views: "15.7K",
     likes: "892",
@@ -31,11 +31,11 @@ const featuredProjects = [
   },
   {
     id: 3,
-    title: "Fashion Reel Series",
+    title: "Car Promo Video",
     category: "Reels",
-    description: "Trendy fashion content optimized for Instagram with snappy cuts and transitions.",
+    description: "Cinematic Car Reels for car lovers! With full cinematic vibes, trendy speed ramps and perfect beat sync",
     thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    videoUrl: "/car.mp4",
     duration: "0:30",
     views: "45.2K",
     likes: "3.1K",
@@ -43,11 +43,11 @@ const featuredProjects = [
   },
   {
     id: 4,
-    title: "Corporate Brand Story",
+    title: "App Promo Video",
     category: "Corporate",
-    description: "Professional brand video showcasing company values and team culture.",
+    description: "This is an app promotional video that we've produced. With full cinematic vibes, trendy speed ramps and perfect beat sync. ",
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    videoUrl: "/app.mp4",
     duration: "3:20",
     views: "8.9K",
     likes: "234",
@@ -55,11 +55,11 @@ const featuredProjects = [
   },
   {
     id: 5,
-    title: "YouTube Tech Review",
+    title: "Short film trailer",
     category: "YouTube",
-    description: "Engaging tech review with dynamic editing and retention-focused pacing.",
+    description: "Diverse range of VFX,Sound mixing, music and storytelling techniques to dynamically shift the tone and atmosphere throughout the experience",
     thumbnail: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    videoUrl: "/short-film.mp4",
     duration: "12:15",
     views: "67.3K",
     likes: "4.2K",
@@ -67,11 +67,11 @@ const featuredProjects = [
   },
   {
     id: 6,
-    title: "Music Video: Urban Vibes",
-    category: "Music",
-    description: "High-energy music video with creative transitions and color effects.",
+    title: "Documentary Film",
+    category: "YouTube",
+    description: "This is a 1-minute movie trailer edit for 'Upcoming Challenges,' a short film about next-generation problems. I used AI to enhance the cinematic visuals.",
     thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "#",
+    videoUrl: "/documentary2.mp4",
     duration: "4:10",
     views: "23.8K",
     likes: "1.7K",
@@ -79,15 +79,30 @@ const featuredProjects = [
   }
 ];
 
-const categories = ["All", "Wedding", "Travel", "Reels", "Corporate", "YouTube", "Music"];
+const categories = ["All", "Wedding", "Documentary", "Reels", "Corporate", "YouTube", "Music"];
 
 export default function FeaturedWork() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredProject, setHoveredProject] = useState(null);
+  const videoRefs = useRef({});
 
   const filteredProjects = activeCategory === "All" 
     ? featuredProjects 
     : featuredProjects.filter(project => project.category === activeCategory);
+
+  useEffect(() => {
+    Object.keys(videoRefs.current).forEach(key => {
+      const video = videoRefs.current[key];
+      if (video) {
+        if (hoveredProject === parseInt(key)) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }, [hoveredProject]);
 
   return (
     <section className="mt-20 py-20">
@@ -145,41 +160,56 @@ export default function FeaturedWork() {
             }}
             onHoverStart={() => setHoveredProject(project.id)}
             onHoverEnd={() => setHoveredProject(null)}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-200 hover:shadow-lg"
+            onClick={() => {
+              if (project.videoUrl && project.videoUrl !== "#") {
+                window.open(project.videoUrl, '_blank');
+              }
+            }}
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-200 hover:shadow-lg cursor-pointer"
           >
             {/* Thumbnail */}
             <div className="relative aspect-video overflow-hidden">
-              <Image
-                src={project.thumbnail}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                unoptimized
-              />
+              {project.videoUrl && project.videoUrl !== "#" ? (
+                <video
+                  ref={(el) => videoRefs.current[project.id] = el}
+                  src={project.videoUrl}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  unoptimized
+                />
+              )}
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               {/* Play Button */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: hoveredProject === project.id ? 1 : 0,
-                  opacity: hoveredProject === project.id ? 1 : 0
-                }}
-                transition={{ duration: 0.1 }}
-              >
-                <div className="w-16 h-16 rounded-full bg-[#D4A514] flex items-center justify-center shadow-2xl">
-                  <FaPlay className="text-black text-xl ml-1" />
-                </div>
-              </motion.div>
+              {!(project.videoUrl && project.videoUrl !== "#") && (
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ 
+                    scale: hoveredProject === project.id ? 1 : 0,
+                    opacity: hoveredProject === project.id ? 1 : 0
+                  }}
+                  transition={{ duration: 0.1 }}
+                >
+                  <div className="w-16 h-16 rounded-full bg-[#D4A514] flex items-center justify-center shadow-2xl">
+                    <FaPlay className="text-black text-xl ml-1" />
+                  </div>
+                </motion.div>
+              )}
 
-              {/* Duration Badge */}
-              <div className="absolute top-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                {project.duration}
-              </div>
 
               {/* Featured Badge */}
               {project.featured && (

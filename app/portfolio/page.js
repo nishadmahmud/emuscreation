@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   FaPlay,
@@ -19,200 +19,168 @@ const portfolioData = [
     id: 1,
     title: "Sarah & Michael's Wedding",
     category: "Wedding",
-    thumbnail:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456789",
-    duration: "8:45",
-    views: "12.5K",
-    likes: "847",
+    thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/wedding.mp4",
+    duration: "5:30",
+    views: "2.3K",
+    likes: "156",
     date: "2024-01-15",
-    description:
-      "A romantic wedding highlight reel capturing the couple's special day with cinematic storytelling and emotional music.",
+    description: "A romantic destination wedding captured in cinematic style with emotional storytelling.",
     tools: ["Adobe Premiere Pro", "DaVinci Resolve", "After Effects"],
     musicSource: "Licensed from Artlist",
     turnaround: "5 days",
     featured: true,
     caseStudy: {
       goal: "Create an emotional wedding highlight reel that captures the essence of Sarah and Michael's special day",
-      approach:
-        "Used cinematic color grading, slow-motion sequences, and carefully selected music to tell their love story",
-      result:
-        "Client was overwhelmed with emotion and received countless compliments from guests. Video went viral on social media.",
+      approach: "Used cinematic color grading, slow-motion sequences, and carefully selected music to tell their love story",
+      result: "Client was overwhelmed with emotion and received countless compliments from guests. Video went viral on social media.",
     },
   },
   {
     id: 2,
-    title: "Bali Adventure Travel Vlog",
-    category: "Travel",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456790",
-    duration: "12:30",
-    views: "8.2K",
-    likes: "523",
+    title: "Documentary Film",
+    category: "Documentary",
+    thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/documentary.mp4",
+    duration: "8:45",
+    views: "15.7K",
+    likes: "892",
     date: "2024-01-10",
-    description:
-      "Epic travel vlog showcasing Bali's beauty with dynamic editing and adventure storytelling.",
+    description: "Documentary Film And Reunion,Its a Sweet past collage reunion documentary",
     tools: ["Final Cut Pro", "DaVinci Resolve", "Motion"],
     musicSource: "Epidemic Sound",
     turnaround: "7 days",
     featured: true,
     caseStudy: {
-      goal: "Create an engaging travel vlog that showcases Bali's natural beauty and adventure activities",
-      approach:
-        "Combined drone footage, GoPro action shots, and cinematic transitions with upbeat music",
-      result:
-        "Video gained 8K+ views and helped the client grow their travel channel by 40%.",
+      goal: "Create an engaging documentary that showcases reunion stories and emotional connections",
+      approach: "Combined archival footage, interviews, and cinematic storytelling with emotional music",
+      result: "Documentary gained 15K+ views and helped preserve precious family memories.",
     },
   },
   {
     id: 3,
-    title: "Fashion Reel Series",
+    title: "Car Promo Video",
     category: "Reels",
-    thumbnail:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456791",
+    thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/car.mp4",
     duration: "0:30",
-    views: "25.3K",
-    likes: "1.2K",
+    views: "45.2K",
+    likes: "3.1K",
     date: "2024-01-08",
-    description:
-      "Trendy fashion reels with quick cuts and modern transitions for Instagram.",
+    description: "Cinematic Car Reels for car lovers! With full cinematic vibes, trendy speed ramps and perfect beat sync",
     tools: ["Adobe Premiere Pro", "After Effects"],
     musicSource: "Instagram Music Library",
     turnaround: "2 days",
     featured: true,
     caseStudy: {
-      goal: "Create viral-worthy fashion reels that showcase clothing collections effectively",
-      approach:
-        "Used trending transitions, perfect timing with music beats, and strategic color grading",
-      result:
-        "Reels averaged 25K+ views and significantly increased brand engagement and sales.",
+      goal: "Create viral-worthy car reels that showcase automotive beauty effectively",
+      approach: "Used trending transitions, perfect timing with music beats, and strategic color grading",
+      result: "Reels averaged 45K+ views and significantly increased brand engagement and sales.",
     },
   },
   {
     id: 4,
-    title: "Corporate Brand Story",
+    title: "App Promo Video",
     category: "Corporate",
-    thumbnail:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456792",
-    duration: "3:15",
-    views: "5.7K",
+    thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/app.mp4",
+    duration: "3:20",
+    views: "8.9K",
     likes: "234",
     date: "2024-01-05",
-    description:
-      "Professional corporate video showcasing company values and team culture.",
+    description: "This is an app promotional video that we've produced. With full cinematic vibes, trendy speed ramps and perfect beat sync.",
     tools: ["Adobe Premiere Pro", "DaVinci Resolve"],
     musicSource: "Premium Beat",
     turnaround: "6 days",
     featured: false,
     caseStudy: {
-      goal: "Create a professional corporate video that communicates company values and attracts talent",
-      approach:
-        "Used clean, modern editing with professional color grading and corporate-friendly music",
-      result:
-        "Video was used in recruitment campaigns and helped increase job applications by 60%.",
+      goal: "Create a professional app promo video that communicates features and attracts users",
+      approach: "Used clean, modern editing with professional color grading and corporate-friendly music",
+      result: "Video was used in marketing campaigns and helped increase app downloads by 60%.",
     },
   },
   {
     id: 5,
-    title: "Tech Review Channel",
+    title: "Short film trailer",
     category: "YouTube",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456793",
-    duration: "15:20",
-    views: "18.9K",
-    likes: "892",
+    thumbnail: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/short-film.mp4",
+    duration: "12:15",
+    views: "67.3K",
+    likes: "4.2K",
     date: "2024-01-03",
-    description:
-      "Comprehensive tech review with detailed analysis and engaging presentation.",
+    description: "Diverse range of VFX,Sound mixing, music and storytelling techniques to dynamically shift the tone and atmosphere throughout the experience",
     tools: ["Final Cut Pro", "Motion", "Compressor"],
     musicSource: "AudioJungle",
     turnaround: "8 days",
     featured: false,
     caseStudy: {
-      goal: "Create engaging tech review content that keeps viewers watching until the end",
-      approach:
-        "Used dynamic editing, clear graphics, and strategic pacing to maintain viewer engagement",
-      result:
-        "Video achieved 85% watch-through rate and became the channel's most popular review.",
+      goal: "Create engaging short film trailer that keeps viewers watching until the end",
+      approach: "Used dynamic editing, clear graphics, and strategic pacing to maintain viewer engagement",
+      result: "Trailer achieved 85% watch-through rate and became the film's most popular promotional content.",
     },
   },
   {
     id: 6,
-    title: "Music Video Production",
-    category: "Music",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456794",
-    duration: "4:12",
-    views: "32.1K",
-    likes: "1.8K",
+    title: "Documentary Film",
+    category: "YouTube",
+    thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "/documentary2.mp4",
+    duration: "4:10",
+    views: "23.8K",
+    likes: "1.7K",
     date: "2024-01-01",
-    description:
-      "Creative music video with artistic editing and visual storytelling.",
+    description: "This is a 1-minute movie trailer edit for 'Upcoming Challenges,' a short film about next-generation problems. I used AI to enhance the cinematic visuals.",
     tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
     musicSource: "Original Track",
     turnaround: "10 days",
     featured: false,
     caseStudy: {
-      goal: "Create a visually stunning music video that complements the artist's creative vision",
-      approach:
-        "Used artistic color grading, creative transitions, and synchronized editing with the music",
-      result:
-        "Music video gained 32K+ views and helped the artist reach new audiences.",
+      goal: "Create a visually stunning documentary trailer that complements the film's creative vision",
+      approach: "Used artistic color grading, creative transitions, and synchronized editing with AI-enhanced visuals",
+      result: "Trailer gained 23K+ views and helped the film reach new audiences.",
     },
   },
   {
     id: 7,
     title: "Product Launch Campaign",
     category: "Corporate",
-    thumbnail:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
+    thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
     videoUrl: "https://player.vimeo.com/video/123456795",
     duration: "2:45",
     views: "7.4K",
     likes: "456",
     date: "2023-12-28",
-    description:
-      "Dynamic product launch video with modern editing and compelling storytelling.",
+    description: "Dynamic product launch video with modern editing and compelling storytelling.",
     tools: ["Adobe Premiere Pro", "After Effects"],
     musicSource: "Premium Beat",
     turnaround: "5 days",
     featured: false,
     caseStudy: {
       goal: "Create an exciting product launch video that generates buzz and drives sales",
-      approach:
-        "Used dynamic editing, product showcases, and compelling storytelling techniques",
-      result:
-        "Video contributed to 40% increase in pre-orders and strong social media engagement.",
+      approach: "Used dynamic editing, product showcases, and compelling storytelling techniques",
+      result: "Video contributed to 40% increase in pre-orders and strong social media engagement.",
     },
   },
   {
     id: 8,
     title: "Lifestyle Reels Collection",
     category: "Reels",
-    thumbnail:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=600&fit=crop&crop=center",
+    thumbnail: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=400&fit=crop&crop=center",
     videoUrl: "https://player.vimeo.com/video/123456796",
     duration: "0:45",
     views: "19.7K",
     likes: "1.1K",
     date: "2023-12-25",
-    description:
-      "Collection of lifestyle reels showcasing daily routines and wellness content.",
+    description: "Collection of lifestyle reels showcasing daily routines and wellness content.",
     tools: ["Adobe Premiere Pro", "After Effects"],
     musicSource: "Instagram Music Library",
     turnaround: "3 days",
     featured: false,
     caseStudy: {
       goal: "Create relatable lifestyle content that resonates with target audience",
-      approach:
-        "Used authentic storytelling, natural lighting, and trending audio to maximize engagement",
-      result:
-        "Reels averaged 19K+ views and significantly increased follower engagement rate.",
+      approach: "Used authentic storytelling, natural lighting, and trending audio to maximize engagement",
+      result: "Reels averaged 19K+ views and significantly increased follower engagement rate.",
     },
   },
 ];
@@ -220,7 +188,7 @@ const portfolioData = [
 const categories = [
   "All",
   "Wedding",
-  "Travel",
+  "Documentary",
   "Reels",
   "Corporate",
   "YouTube",
@@ -230,6 +198,7 @@ const categories = [
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredProject, setHoveredProject] = useState(null);
+  const videoRefs = useRef({});
 
   const filteredProjects =
     activeCategory === "All"
@@ -237,6 +206,20 @@ export default function PortfolioPage() {
       : portfolioData.filter((project) => project.category === activeCategory);
 
   const featuredProjects = portfolioData.filter((project) => project.featured);
+
+  useEffect(() => {
+    Object.keys(videoRefs.current).forEach(key => {
+      const video = videoRefs.current[key];
+      if (video) {
+        if (hoveredProject === parseInt(key)) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }, [hoveredProject]);
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
@@ -310,6 +293,11 @@ export default function PortfolioPage() {
                   className="relative group cursor-pointer"
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
+                  onClick={() => {
+                    if (project.videoUrl && project.videoUrl !== "#") {
+                      window.open(project.videoUrl, '_blank');
+                    }
+                  }}
                 >
                   <div className="relative rounded-2xl overflow-hidden bg-[var(--bg-elevated)] border border-[var(--border-subtle)]">
                     {/* Featured Badge */}
@@ -321,31 +309,45 @@ export default function PortfolioPage() {
 
                     {/* Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={project.thumbnail}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        unoptimized
-                      />
+                      {project.videoUrl && project.videoUrl !== "#" && !project.videoUrl.includes("vimeo") ? (
+                        <video
+                          ref={(el) => videoRefs.current[project.id] = el}
+                          src={project.videoUrl}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                        />
+                      ) : (
+                        <Image
+                          src={project.thumbnail}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          unoptimized
+                        />
+                      )}
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       {/* Play Button */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <motion.div
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{
-                            scale: hoveredProject === project.id ? 1 : 0.8,
-                            opacity: hoveredProject === project.id ? 1 : 0,
-                          }}
-                          transition={{ duration: 0.2 }}
-                          className="w-16 h-16 bg-[#D4A514] rounded-full flex items-center justify-center shadow-2xl"
-                        >
-                          <FaPlay className="text-black text-xl ml-1" />
-                        </motion.div>
-                      </div>
+                      {!(project.videoUrl && project.videoUrl !== "#" && !project.videoUrl.includes("vimeo")) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{
+                              scale: hoveredProject === project.id ? 1 : 0.8,
+                              opacity: hoveredProject === project.id ? 1 : 0,
+                            }}
+                            transition={{ duration: 0.2 }}
+                            className="w-16 h-16 bg-[#D4A514] rounded-full flex items-center justify-center shadow-2xl"
+                          >
+                            <FaPlay className="text-black text-xl ml-1" />
+                          </motion.div>
+                        </div>
+                      )}
 
                       {/* Duration */}
                       <div className="absolute top-4 right-4 bg-black/80 text-white px-2 py-1 rounded text-sm">
@@ -426,35 +428,54 @@ export default function PortfolioPage() {
                   className="relative group cursor-pointer"
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
+                  onClick={() => {
+                    if (project.videoUrl && project.videoUrl !== "#") {
+                      window.open(project.videoUrl, '_blank');
+                    }
+                  }}
                 >
                   <div className="relative rounded-xl overflow-hidden bg-[var(--bg-elevated)] border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-300">
                     {/* Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={project.thumbnail}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        unoptimized
-                      />
+                      {project.videoUrl && project.videoUrl !== "#" && !project.videoUrl.includes("vimeo") ? (
+                        <video
+                          ref={(el) => videoRefs.current[project.id] = el}
+                          src={project.videoUrl}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                        />
+                      ) : (
+                        <Image
+                          src={project.thumbnail}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          unoptimized
+                        />
+                      )}
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       {/* Play Button */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <motion.div
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{
-                            scale: hoveredProject === project.id ? 1 : 0.8,
-                            opacity: hoveredProject === project.id ? 1 : 0,
-                          }}
-                          transition={{ duration: 0.2 }}
-                          className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center shadow-xl"
-                        >
-                          <FaPlay className="text-black text-sm ml-0.5" />
-                        </motion.div>
-                      </div>
+                      {!(project.videoUrl && project.videoUrl !== "#" && !project.videoUrl.includes("vimeo")) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{
+                              scale: hoveredProject === project.id ? 1 : 0.8,
+                              opacity: hoveredProject === project.id ? 1 : 0,
+                            }}
+                            transition={{ duration: 0.2 }}
+                            className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center shadow-xl"
+                          >
+                            <FaPlay className="text-black text-sm ml-0.5" />
+                          </motion.div>
+                        </div>
+                      )}
 
                       {/* Duration */}
                       <div className="absolute top-3 right-3 bg-black/80 text-white px-2 py-1 rounded text-xs">
@@ -634,9 +655,14 @@ export default function PortfolioPage() {
               that tells your story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300">
+              <a 
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
                 Get a Quote
-              </button>
+              </a>
               <button className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300">
                 View Our Process
               </button>

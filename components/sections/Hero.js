@@ -55,7 +55,9 @@ return (
         <motion.a 
           whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(212, 165, 20, 0.3)" }}
           whileTap={{ scale: 0.98 }}
-          href="/contact" 
+          href="https://www.fiverr.com/users/mehediemu"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-[#D4A514] text-black px-6 py-3 font-medium transition-all duration-300"
         >
           Get a Quote

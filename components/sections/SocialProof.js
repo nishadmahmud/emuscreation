@@ -60,7 +60,7 @@ const testimonials = [
 ];
 
 const stats = [
-  { number: "500+", label: "Projects Completed", icon: FaHeart },
+  { number: "350+", label: "Projects Completed", icon: FaHeart },
   { number: "50+", label: "Countries Served", icon: FaGlobe },
   { number: "98%", label: "Client Satisfaction", icon: FaStar },
   { number: "24h", label: "Average Turnaround", icon: FaStar }

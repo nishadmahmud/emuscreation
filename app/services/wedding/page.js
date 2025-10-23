@@ -170,9 +170,14 @@ export default function WeddingPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300">
+                <a 
+                  href="https://www.fiverr.com/users/mehediemu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
+                >
                   Get a Quote
-                </button>
+                </a>
                 <button className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300">
                   View Portfolio
                 </button>
@@ -517,9 +522,14 @@ export default function WeddingPage() {
               Let&apos;s discuss your vision and create a wedding video that captures every precious moment of your special day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300">
+              <a 
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
                 Get a Quote
-              </button>
+              </a>
               <button className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300">
                 View Full Portfolio
               </button>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaYoutube, FaFacebook, FaWhatsapp, FaVimeo } from "react-icons/fa";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -62,12 +62,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
+              <a
                 className="hover:text-[var(--text-primary)] hover:underline underline-offset-4"
-                href="/contact"
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Get a Quote
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -127,19 +129,30 @@ export default function Footer() {
             </div>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
-                <a className="hover:text-[var(--text-primary)]" href="mailto:hello@example.com">
-                  hello@example.com
+                <a 
+                  className="hover:text-[var(--text-primary)]" 
+                  href="https://www.fiverr.com/users/mehediemu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fiverr Account
                 </a>
               </li>
               <li>
                 <a
-                  className="hover:text-[var(--text-primary)]"
-                  href="https://wa.me/1234567890"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/20 hover:border-[#25D366]/30 transition-all duration-300 font-medium"
+                  href="https://wa.me/8801743025398"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp
+                  <FaWhatsapp className="text-sm" />
+                  <span>+8801743025398</span>
                 </a>
+              </li>
+              <li>
+                <span className="text-[var(--text-secondary)]">
+                  Dhaka, Bangladesh
+                </span>
               </li>
             </ul>
           </div>
@@ -150,17 +163,21 @@ export default function Footer() {
             <ul className="flex gap-3">
               <li>
                 <a
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#E1306C]"
-                  href="#"
-                  aria-label="Instagram"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#0077B5]"
+                  href="https://www.linkedin.com/company/emu-s-creation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                 >
-                  <FaInstagram aria-hidden className="h-4 w-4" />
+                  <FaLinkedin aria-hidden className="h-4 w-4" />
                 </a>
               </li>
               <li>
                 <a
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#FF0000]"
-                  href="#"
+                  href="https://www.youtube.com/@emuscreation1646"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="YouTube"
                 >
                   <FaYoutube aria-hidden className="h-4 w-4" />
@@ -169,10 +186,23 @@ export default function Footer() {
               <li>
                 <a
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#1877F2]"
-                  href="#"
+                  href="https://www.facebook.com/emuscreation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                 >
                   <FaFacebook aria-hidden className="h-4 w-4" />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] hover:text-[#1AB7EA]"
+                  href="https://vimeo.com/user91230351"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Vimeo"
+                >
+                  <FaVimeo aria-hidden className="h-4 w-4" />
                 </a>
               </li>
             </ul>
