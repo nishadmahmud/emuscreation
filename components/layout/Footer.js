@@ -146,7 +146,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <FaWhatsapp className="text-sm" />
-                  <span>+8801743025398</span>
+                  <span>WhatsApp</span>
                 </a>
               </li>
               <li>

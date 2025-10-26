@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaPlane,
@@ -177,6 +178,25 @@ const testimonials = [
 ];
 
 export default function TravelPage() {
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      if (isHovered) {
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+  }, [isHovered]);
+
+  const handleVideoClick = () => {
+    window.open("https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/rziq7wpgnwplyue72msk", '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
@@ -217,9 +237,12 @@ export default function TravelPage() {
                 >
                   Get a Quote
                 </a>
-                <button className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300">
+                <a
+                  href="/portfolio"
+                  className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300 text-center"
+                >
                   View Portfolio
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -227,30 +250,115 @@ export default function TravelPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative group cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={handleVideoClick}
             >
               <div className="relative aspect-video rounded-2xl overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center"
-                  alt="Travel Vlog Editing"
-                  fill
-                  className="object-cover"
-                  unoptimized
+                <video
+                  ref={videoRef}
+                  src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/rziq7wpgnwplyue72msk"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                 />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-[#D4A514] rounded-full flex items-center justify-center shadow-2xl">
-                    <FaVideo className="text-black text-2xl" />
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Deliverables Section */}
+      {/* Pricing Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-elevated)]/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+              Travel Vlog Packages
+            </h2>
+            <p className="text-[var(--text-secondary)] mb-8">
+              Choose the perfect package for your travel adventure content
+            </p>
+
+            <div className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[#D4A514]/30">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center">
+                  <FaPlane className="text-black text-xl" />
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                  Adventure Travel Package
+                </h3>
+              </div>
+
+              <div className="text-4xl font-bold text-[#D4A514] mb-4">
+                ৳40,000
+              </div>
+
+              <p className="text-[var(--text-secondary)] mb-6">
+                Complete travel vlog solution for adventure seekers and travel content creators
+              </p>
+
+              <div className="text-left space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Up to 20 minutes final video</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Drone footage integration</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Cinematic color grading</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">3 revisions included</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">4K delivery available</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">8-day turnaround</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Adventure music licensing</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Location graphics & maps</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaCheck className="text-green-400 text-sm" />
+                  <span className="text-[var(--text-primary)]">Social media clips included</span>
+                </div>
+              </div>
+
+              <a
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
+                Get Started
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Deliverables Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -474,105 +582,6 @@ export default function TravelPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-elevated)]/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
-              Travel Vlog Packages
-            </h2>
-            <p className="text-[var(--text-secondary)] mb-8">
-              Choose the perfect package for your travel adventure content
-            </p>
-
-            <div className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[#D4A514]/30">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center">
-                  <FaPlane className="text-black text-xl" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  Adventure Travel Package
-                </h3>
-              </div>
-
-              <div className="text-4xl font-bold text-[#D4A514] mb-4">
-                ৳40,000
-              </div>
-
-              <p className="text-[var(--text-secondary)] mb-6">
-                Complete travel vlog solution for adventure seekers and travel
-                content creators
-              </p>
-
-              <div className="text-left space-y-3 mb-8">
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Up to 20 minutes final video
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Drone footage integration
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Cinematic color grading
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    3 revisions included
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    4K delivery available
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    8-day turnaround
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Adventure music licensing
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Location graphics & maps
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Social media clips included
-                  </span>
-                </div>
-              </div>
-
-              <button className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 w-full">
-                Get Started
-              </button>
-            </div>
-          </motion.div>
         </div>
       </section>
 

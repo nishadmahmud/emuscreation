@@ -224,7 +224,7 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Header */}
-      <section className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <section className="pt-4 pb-1 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -234,7 +234,7 @@ export default function PortfolioPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] mb-6">
               Our <span className="text-[#D4A514]">Portfolio</span>
             </h1>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-[var(--text-secondary)] max-w-4xl mx-auto mb-12">
               Explore our diverse collection of video editing projects across
               weddings, travel, reels, corporate, and more. Each project tells a
               unique story crafted with precision and creativity.
@@ -242,7 +242,7 @@ export default function PortfolioPage() {
           </motion.div>
 
           {/* Category Filter */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -261,13 +261,13 @@ export default function PortfolioPage() {
                 {category}
               </button>
             ))}
-          </motion.div>
+          {/* </motion.div> */}
         </div>
       </section>
 
       {/* Featured Projects */}
       {activeCategory === "All" && (
-        <section className="pt-4 pb-8 px-4 sm:px-6 lg:px-8">
+        <section className="pt-1 pb-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -275,12 +275,12 @@ export default function PortfolioPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
+              {/* <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                 Featured Work
-              </h2>
-              <p className="text-[var(--text-secondary)]">
+              </h2> */}
+              {/* <p className="text-[var(--text-secondary)]">
                 Our most popular and impactful projects
-              </p>
+              </p> */}
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
