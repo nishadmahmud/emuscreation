@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function Page() {
 return (
-<div className="mx-auto w-full max-w-3xl px-4 py-12">
+<div className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-8">
   <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">Terms & Conditions</h1>
   <p className="mt-2 text-sm text-white/60">Effective date: {new Date().getFullYear()}</p>
 

@@ -67,7 +67,7 @@ const renderStars = (rating) => {
 
 export default function Page() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-12 sm:py-16">
+    <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-8">
       <header className="mb-10 sm:mb-12">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text-primary)]">
           Testimonials / Clients

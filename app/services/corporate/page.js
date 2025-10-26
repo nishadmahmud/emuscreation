@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaBuilding,
@@ -177,10 +178,29 @@ const testimonials = [
 ];
 
 export default function CorporatePage() {
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      if (isHovered) {
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+  }, [isHovered]);
+
+  const handleVideoClick = () => {
+    window.open("https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328", '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
-      <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-4 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -211,16 +231,19 @@ export default function CorporatePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="https://www.fiverr.com/users/mehediemu"
+                  href="https://www.fiverr.com/mehediemu/do-documentary-video-editing-and-short-film?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=9&imp_id=70d18daa-f789-4afc-ba62-facb65cd8e74"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
                 >
                   Get a Quote
                 </a>
-                <button className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300">
+                <a
+                  href="/portfolio"
+                  className="border-2 border-[#D4A514] text-[#D4A514] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#D4A514] hover:text-black transition-colors duration-300 text-center"
+                >
                   View Portfolio
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -228,30 +251,285 @@ export default function CorporatePage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative group cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={handleVideoClick}
             >
               <div className="relative aspect-video rounded-2xl overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
-                  alt="Corporate Video Editing"
-                  fill
-                  className="object-cover"
-                  unoptimized
+                <video
+                  ref={videoRef}
+                  src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                 />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-[#D4A514] rounded-full flex items-center justify-center shadow-2xl">
-                    <FaVideo className="text-black text-2xl" />
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Deliverables Section */}
+      {/* Pricing Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-elevated)]/20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+              Corporate Video Packages
+            </h2>
+            <p className="text-[var(--text-secondary)] mb-8">
+              Choose the perfect package for your corporate film editing needs
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Package 1 - Basic */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[var(--border-subtle)] hover:border-[#D4A514]/50 transition-all duration-300 flex flex-col"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                  Basic Package
+                </h3>
+                <div className="text-4xl font-bold text-[#D4A514] mb-2">
+                  $505
+                </div>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  1 Min Film edit - Short Teaser (1-2 min)
+                </p>
+              </div>
+              
+              <div className="space-y-3 mb-8 flex-grow">
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">7-day delivery</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">2 Revisions</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Up to 45 minutes of footage provided</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Color grading</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Subtitles</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Include source file</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">1 Commercially licensed music track</span>
+                </div>
+              </div>
+              
+              <a
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#D4A514] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
+                Order Now
+              </a>
+            </motion.div>
+
+            {/* Package 2 - Standard */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-[var(--bg-elevated)] rounded-2xl p-8 border-2 border-[#D4A514] hover:border-[#D4A514]/80 transition-all duration-300 relative flex flex-col"
+            >
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#D4A514] text-black px-4 py-1 rounded-full text-sm font-semibold">
+                  MOST POPULAR
+                </span>
+              </div>
+              
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                  Standard Package
+                </h3>
+                <div className="text-4xl font-bold text-[#D4A514] mb-2">
+                  $700
+                </div>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  5 Min film edit - Highlight (3-5 min)
+                </p>
+              </div>
+              
+              <div className="space-y-3 mb-8 flex-grow">
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">10-day delivery</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">3 Revisions</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Up to 300 minutes of footage provided</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Color grading</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Subtitles</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Include source file</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">3 Commercially licensed music tracks</span>
+                </div>
+              </div>
+              
+              <a
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#D4A514] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
+                Order Now
+              </a>
+            </motion.div>
+
+            {/* Package 3 - Premium */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[var(--border-subtle)] hover:border-[#D4A514]/50 transition-all duration-300 flex flex-col"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                  Premium Package
+                </h3>
+                <div className="text-4xl font-bold text-[#D4A514] mb-2">
+                  $1,510
+                </div>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  10 Min film edit - Full Film (up to 60 min)
+                </p>
+              </div>
+              
+              <div className="space-y-3 mb-8 flex-grow">
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">10-day delivery</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">4 Revisions</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Unlimited minutes of footage provided</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Color grading</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Subtitles</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">Include source file</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <FaCheck className="text-green-400 flex-shrink-0" />
+                  <span className="text-[var(--text-primary)]">6 Commercially licensed music tracks</span>
+                </div>
+              </div>
+              
+              <a
+                href="https://www.fiverr.com/users/mehediemu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#D4A514] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#B8941F] transition-colors duration-300 text-center"
+              >
+                Order Now
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deliverables Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -475,105 +753,6 @@ export default function CorporatePage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-elevated)]/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
-              Corporate Video Packages
-            </h2>
-            <p className="text-[var(--text-secondary)] mb-8">
-              Choose the perfect package for your corporate communication needs
-            </p>
-
-            <div className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[#D4A514]/30">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center">
-                  <FaBuilding className="text-black text-xl" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  Professional Corporate Package
-                </h3>
-              </div>
-
-              <div className="text-4xl font-bold text-[#D4A514] mb-4">
-                ৳50,000
-              </div>
-
-              <p className="text-[var(--text-secondary)] mb-6">
-                Complete corporate video solution for professional business
-                communications and marketing
-              </p>
-
-              <div className="text-left space-y-3 mb-8">
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Up to 10 minutes final video
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Professional corporate editing
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Brand consistency & guidelines
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    3 revisions included
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    4K delivery available
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    7-day turnaround
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Corporate music licensing
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Multiple format delivery
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">
-                    Social media versions included
-                  </span>
-                </div>
-              </div>
-
-              <button className="bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 w-full">
-                Get Started
-              </button>
-            </div>
-          </motion.div>
         </div>
       </section>
 

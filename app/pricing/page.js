@@ -100,7 +100,7 @@ const addOnServices = [
 
 export default function Page() {
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 py-12">
+    <main className="mx-auto w-full max-w-7xl px-4 py-8">
       {/* Header */}
       <header className="text-center mb-16">
         <motion.h1

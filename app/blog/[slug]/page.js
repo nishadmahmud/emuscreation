@@ -140,7 +140,7 @@ export default function BlogPost({ params }) {
 
   if (!post) {
     return (
-      <main className="mx-auto w-full max-w-4xl px-4 py-12">
+      <main className="mx-auto w-full max-w-4xl px-4 py-8 sm:py-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[var(--text-primary)] mb-4">
             Post Not Found

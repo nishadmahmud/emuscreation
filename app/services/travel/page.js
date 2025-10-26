@@ -200,7 +200,7 @@ export default function TravelPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
-      <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-4 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -274,85 +274,86 @@ export default function TravelPage() {
 
       {/* Pricing Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-elevated)]/20">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
               Travel Vlog Packages
             </h2>
             <p className="text-[var(--text-secondary)] mb-8">
-              Choose the perfect package for your travel adventure content
+              Social Media Video Editing + Highlight Film
             </p>
+          </motion.div>
 
-            <div className="bg-[var(--bg-elevated)] rounded-2xl p-8 border border-[#D4A514]/30">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#D4A514] rounded-full flex items-center justify-center">
-                  <FaPlane className="text-black text-xl" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  Adventure Travel Package
-                </h3>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-[var(--bg-elevated)] rounded-2xl p-8 border-2 border-[#D4A514] hover:border-[#D4A514]/80 transition-all duration-300 flex flex-col"
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+                Social Media Video Editing Feature + Highlight Film
+              </h3>
+              <div className="text-4xl font-bold text-[#D4A514] mb-2">
+                $530
               </div>
-
-              <div className="text-4xl font-bold text-[#D4A514] mb-4">
-                ৳40,000
-              </div>
-
-              <p className="text-[var(--text-secondary)] mb-6">
-                Complete travel vlog solution for adventure seekers and travel content creators
+              <p className="text-sm text-[var(--text-secondary)]">
+                Up to 20-30 min Feature film + Up to 5-min Highlight Film
               </p>
-
-              <div className="text-left space-y-3 mb-8">
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Up to 20 minutes final video</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Drone footage integration</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Cinematic color grading</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">3 revisions included</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">4K delivery available</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">8-day turnaround</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Adventure music licensing</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Location graphics & maps</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaCheck className="text-green-400 text-sm" />
-                  <span className="text-[var(--text-primary)]">Social media clips included</span>
-                </div>
-              </div>
-
-              <a
-                href="https://www.fiverr.com/users/mehediemu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-[#D4A514] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#B8941F] transition-colors duration-300 text-center"
-              >
-                Get Started
-              </a>
             </div>
+
+            <div className="space-y-3 mb-8 flex-grow">
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">10-day delivery</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">2 Revisions</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Up to 120 minutes of footage provided</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Up to 30 minutes running time</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Color grading</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Motion graphics</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">Include source file</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <FaCheck className="text-green-400 flex-shrink-0" />
+                <span className="text-[var(--text-primary)]">10 Commercially licensed music tracks</span>
+              </div>
+            </div>
+
+            <a
+              href="https://www.fiverr.com/mehediemu/edit-your-full-wedding-movie?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=6&imp_id=07b59ad4-d747-4fd6-b7fb-ecd6a3241a35"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-[#D4A514] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#B8941F] transition-colors duration-300 text-center"
+            >
+              Order Now
+            </a>
           </motion.div>
         </div>
       </section>
