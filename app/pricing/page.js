@@ -1,104 +1,317 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaCheck, FaStar, FaCrown, FaRocket } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
-const pricingPlans = [
-  {
-    id: "starter",
-    name: "Starter",
-    icon: FaRocket,
-    price: "৳15,000",
-    period: "per project",
-    description: "Perfect for small projects and quick edits",
-    color: "from-blue-500 to-blue-600",
-    borderColor: "border-blue-200",
-    bgColor: "bg-blue-50",
-    features: [
-      "Up to 5 minutes final video",
-      "Basic color correction",
-      "Simple transitions",
-      "1 revision included",
-      "HD delivery (1080p)",
-      "3-day turnaround",
-      "Email support",
-    ],
-    popular: false,
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    icon: FaStar,
-    price: "৳35,000",
-    period: "per project",
-    description: "Most popular for wedding highlights and reels",
-    color: "from-[#D4A514] to-[#B8941F]",
-    borderColor: "border-[#D4A514]/30",
-    bgColor: "bg-[#D4A514]/5",
-    features: [
-      "Up to 15 minutes final video",
-      "Advanced color grading",
-      "Custom transitions & effects",
-      "3 revisions included",
-      "4K delivery available",
-      "5-day turnaround",
-      "Music licensing included",
-      "Priority support",
-      "Motion graphics",
-    ],
-    popular: true,
-  },
-  {
-    id: "premium",
-    name: "Premium",
-    icon: FaCrown,
-    price: "৳65,000",
-    period: "per project",
-    description: "Complete production for corporate and YouTube",
-    color: "from-purple-500 to-purple-600",
-    borderColor: "border-purple-200",
-    bgColor: "bg-purple-50",
-    features: [
-      "Unlimited video length",
-      "Cinematic color grading",
-      "Advanced motion graphics",
-      "5 revisions included",
-      "4K/8K delivery",
-      "7-day turnaround",
-      "Premium music licensing",
-      "Dedicated project manager",
-      "After Effects animations",
-      "Custom graphics & titles",
-      "Audio mastering",
-    ],
-    popular: false,
-  },
-];
+// Pricing data from all service pages
+const pricingData = {
+  Wedding: [
+    {
+      id: "wedding-basic",
+      name: "Basic Package",
+      price: "$200",
+      description: "Cinematic Highlight Film Editing",
+      duration: "Wedding Highlight 2-3 minutes",
+      features: [
+        "7-day delivery",
+        "2 Revisions",
+        "Up to 105 minutes of footage provided",
+        "Up to 12 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-professional-full-wedding-video-editing?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=2&imp_id=8f477a21-5573-4d90-a8f0-02eb3eff5718",
+      popular: false,
+    },
+    {
+      id: "wedding-standard",
+      name: "Standard Package",
+      price: "$350",
+      description: "Cinematic Wedding Documentary",
+      duration: "Wedding Highlight Maximum 10-15 minutes",
+      features: [
+        "7-day delivery",
+        "2 Revisions",
+        "Up to 180 minutes of footage provided",
+        "Up to 25 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-professional-full-wedding-video-editing?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=2&imp_id=8f477a21-5573-4d90-a8f0-02eb3eff5718",
+      popular: true,
+    },
+    {
+      id: "wedding-premium",
+      name: "Premium Package",
+      price: "$550",
+      description: "Teaser, Highlight and Full Body",
+      duration: "1 min teaser, 3-5 min highlight and 20-30 min full body",
+      features: [
+        "21-day delivery",
+        "2 Revisions",
+        "Up to 180 minutes of footage provided",
+        "Up to 40 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-professional-full-wedding-video-editing?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=2&imp_id=8f477a21-5573-4d90-a8f0-02eb3eff5718",
+      popular: false,
+    },
+  ],
+  Reels: [
+    {
+      id: "reels-basic",
+      name: "Basic Package",
+      price: "$60",
+      description: "1 short reel or TikTok edit with trendy cuts",
+      duration: "1 short reel or TikTok edit",
+      features: [
+        "3-day delivery",
+        "2 Revisions",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "1 Commercially licensed music track",
+        "1 Commercially licensed video clip",
+        "1 Commercially licensed image",
+      ],
+      link: "https://www.fiverr.com/users/mehediemu",
+      popular: false,
+    },
+    {
+      id: "reels-standard",
+      name: "Standard Package",
+      price: "$150",
+      description: "Up to 3 reels or TikToks with smooth transitions",
+      duration: "Up to 3 reels or TikToks",
+      features: [
+        "5-day delivery",
+        "3 Revisions",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "2 Commercially licensed music tracks",
+        "2 Commercially licensed video clips",
+        "3 Commercially licensed images",
+      ],
+      link: "https://www.fiverr.com/users/mehediemu",
+      popular: true,
+    },
+    {
+      id: "reels-premium",
+      name: "Premium Package",
+      price: "$250",
+      description: "5 reels or TikToks with viral edits",
+      duration: "5 reels or TikToks with viral edits",
+      features: [
+        "5-day delivery",
+        "5 Revisions",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "Include source file",
+        "2 Commercially licensed music tracks",
+        "2 Commercially licensed video clips",
+        "3 Commercially licensed images",
+      ],
+      link: "https://www.fiverr.com/users/mehediemu",
+      popular: false,
+    },
+  ],
+  YouTube: [
+    {
+      id: "youtube-basic",
+      name: "Basic Package",
+      price: "$175",
+      description: "1 min Long + 2 short reel edits",
+      duration: "1 min Long + 2 short reel edits",
+      features: [
+        "2-day delivery",
+        "2 Revisions",
+        "Up to 60 minutes of footage provided",
+        "Up to 30 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+        "3 Commercially licensed music tracks",
+        "2 Commercially licensed video clips",
+        "2 Commercially licensed images",
+      ],
+      link: "https://www.fiverr.com/mehediemu/professionally-editing-your-wedding-videos?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=7&imp_id=000fdc89-61e8-4432-b9bf-d4a8ee6ce409",
+      popular: false,
+    },
+    {
+      id: "youtube-standard",
+      name: "Standard Package",
+      price: "$320",
+      description: "1 Min Long to 5 reels editing",
+      duration: "1 Min Long to 5 reels editing",
+      features: [
+        "4-day delivery",
+        "2 Revisions",
+        "Up to 75 minutes of footage provided",
+        "Up to 5 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+        "1 Commercially licensed music track",
+        "2 Commercially licensed video clips",
+        "3 Commercially licensed images",
+      ],
+      link: "https://www.fiverr.com/mehediemu/professionally-editing-your-wedding-videos?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=7&imp_id=000fdc89-61e8-4432-b9bf-d4a8ee6ce409",
+      popular: true,
+    },
+    {
+      id: "youtube-premium",
+      name: "Premium Package",
+      price: "$445",
+      description: "1 min long + 10 reels editing",
+      duration: "1 min long + 10 reels editing",
+      features: [
+        "7-day delivery",
+        "2 Revisions",
+        "Up to 300 minutes of footage provided",
+        "Up to 15 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "Thumbnail included",
+        "Include source file",
+        "5 Commercially licensed music tracks",
+        "3 Commercially licensed video clips",
+        "5 Commercially licensed images",
+      ],
+      link: "https://www.fiverr.com/mehediemu/professionally-editing-your-wedding-videos?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=7&imp_id=000fdc89-61e8-4432-b9bf-d4a8ee6ce409",
+      popular: false,
+    },
+  ],
+  Travel: [
+    {
+      id: "travel-package",
+      name: "Social Media Video Editing",
+      price: "$530",
+      description: "Feature + Highlight Film",
+      duration: "Up to 20-30 min Feature film + Up to 5-min Highlight Film",
+      features: [
+        "10-day delivery",
+        "2 Revisions",
+        "Up to 120 minutes of footage provided",
+        "Up to 30 minutes running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Include source file",
+        "10 Commercially licensed music tracks",
+      ],
+      link: "https://www.fiverr.com/mehediemu/edit-your-full-wedding-movie?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=6&imp_id=07b59ad4-d747-4fd6-b7fb-ecd6a3241a35",
+      popular: true,
+    },
+  ],
+  Corporate: [
+    {
+      id: "corporate-basic",
+      name: "Basic Package",
+      price: "$505",
+      description: "1 Min Film edit - Short Teaser (1-2 min)",
+      duration: "1 Min Film edit",
+      features: [
+        "7-day delivery",
+        "2 Revisions",
+        "Up to 45 minutes of footage provided",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "Thumbnail included",
+        "Include source file",
+        "1 Commercially licensed music track",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-documentary-video-editing-and-short-film?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=9&imp_id=70d18daa-f789-4afc-ba62-facb65cd8e74",
+      popular: false,
+    },
+    {
+      id: "corporate-standard",
+      name: "Standard Package",
+      price: "$700",
+      description: "5 Min film edit - Highlight (3-5 min)",
+      duration: "5 Min film edit",
+      features: [
+        "10-day delivery",
+        "3 Revisions",
+        "Up to 300 minutes of footage provided",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "Thumbnail included",
+        "Include source file",
+        "3 Commercially licensed music tracks",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-documentary-video-editing-and-short-film?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=9&imp_id=70d18daa-f789-4afc-ba62-facb65cd8e74",
+      popular: true,
+    },
+    {
+      id: "corporate-premium",
+      name: "Premium Package",
+      price: "$1,510",
+      description: "10 Min film edit - Full Film (up to 60 min)",
+      duration: "10 Min film edit",
+      features: [
+        "10-day delivery",
+        "4 Revisions",
+        "Unlimited minutes of footage provided",
+        "Up to 1 minute running time",
+        "Color grading",
+        "Sound design & mixing",
+        "Motion graphics",
+        "Subtitles",
+        "Thumbnail included",
+        "Include source file",
+        "6 Commercially licensed music tracks",
+      ],
+      link: "https://www.fiverr.com/mehediemu/do-documentary-video-editing-and-short-film?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=9&imp_id=70d18daa-f789-4afc-ba62-facb65cd8e74",
+      popular: false,
+    },
+  ],
+};
 
-const addOnServices = [
-  {
-    name: "Rush Delivery",
-    description: "24-48 hour turnaround",
-    price: "৳5,000",
-  },
-  {
-    name: "Additional Revisions",
-    description: "Extra rounds of changes",
-    price: "৳2,500",
-  },
-  {
-    name: "Raw Footage Organization",
-    description: "Professional file structure",
-    price: "৳3,000",
-  },
-  {
-    name: "Social Media Versions",
-    description: "Multiple aspect ratios",
-    price: "৳4,000",
-  },
-];
+const categories = ["All", "Wedding", "Reels", "YouTube", "Travel", "Corporate"];
 
 export default function Page() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  // Get all plans or filtered by category
+  const getFilteredPlans = () => {
+    if (activeCategory === "All") {
+      return Object.entries(pricingData).flatMap(([category, plans]) =>
+        plans.map((plan) => ({ ...plan, category }))
+      );
+    }
+    return pricingData[activeCategory].map((plan) => ({
+      ...plan,
+      category: activeCategory,
+    }));
+  };
+
+  const filteredPlans = getFilteredPlans();
+
   return (
     <main className="mx-auto w-full max-w-7xl px-4 py-8">
       {/* Header */}
@@ -115,16 +328,44 @@ export default function Page() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto"
+          className="text-xl text-[var(--text-secondary)] max-w-4xl mx-auto"
         >
           Transparent pricing for premium video editing services. Choose the
           plan that fits your project needs.
         </motion.p>
       </header>
 
+      {/* Category Filter */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex flex-wrap justify-center gap-3 mb-12"
+      >
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer ${
+              activeCategory === category
+                ? "bg-[#D4A514] text-black"
+                : "bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/80"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </motion.div>
+
       {/* Pricing Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-        {pricingPlans.map((plan, index) => (
+      <section className={`grid gap-8 mb-20 ${
+        filteredPlans.length === 1 
+          ? "grid-cols-1 max-w-md mx-auto" 
+          : filteredPlans.length === 2
+          ? "grid-cols-1 md:grid-cols-2"
+          : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      }`}>
+        {filteredPlans.map((plan, index) => (
           <motion.div
             key={plan.id}
             initial={{ opacity: 0, y: 30 }}
@@ -132,7 +373,7 @@ export default function Page() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className={`relative rounded-3xl border-2 ${
               plan.popular
-                ? "border-[#D4A514] bg-[var(--bg-elevated)]/80 shadow-2xl scale-105"
+                ? "border-[#D4A514] bg-[var(--bg-elevated)]/80 shadow-2xl"
                 : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40"
             } p-8 transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex flex-col`}
           >
@@ -145,31 +386,35 @@ export default function Page() {
               </div>
             )}
 
+            {/* Category Badge */}
+            {activeCategory === "All" && (
+              <div className="absolute top-4 right-4">
+                <div className="bg-[var(--bg-elevated)] text-[var(--text-secondary)] px-3 py-1 rounded-full text-xs font-semibold border border-[var(--border-subtle)]">
+                  {plan.category}
+                </div>
+              </div>
+            )}
+
             {/* Plan Header */}
             <div className="text-center mb-8">
-              <div
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${plan.color} flex items-center justify-center mx-auto mb-4`}
-              >
-                <plan.icon className="text-white text-2xl" />
-              </div>
               <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
                 {plan.name}
               </h3>
-              <p className="text-[var(--text-secondary)] mb-4">
+              <p className="text-[var(--text-secondary)] mb-2 text-sm">
                 {plan.description}
+              </p>
+              <p className="text-[var(--text-secondary)] mb-4 text-xs italic">
+                {plan.duration}
               </p>
               <div className="mb-4">
                 <span className="text-4xl font-bold text-[var(--text-primary)]">
                   {plan.price}
                 </span>
-                <span className="text-[var(--text-secondary)] ml-2">
-                  {plan.period}
-                </span>
               </div>
             </div>
 
             {/* Features */}
-            <ul className="space-y-4 flex-grow">
+            <ul className="space-y-3 flex-grow mb-8">
               {plan.features.map((feature, featureIndex) => (
                 <motion.li
                   key={featureIndex}
@@ -181,8 +426,8 @@ export default function Page() {
                   }}
                   className="flex items-start gap-3"
                 >
-                  <FaCheck className="text-[#D4A514] mt-1 flex-shrink-0" />
-                  <span className="text-[var(--text-secondary)]">
+                  <FaCheck className="text-[#D4A514] mt-1 flex-shrink-0 text-sm" />
+                  <span className="text-[var(--text-secondary)] text-sm">
                     {feature}
                   </span>
                 </motion.li>
@@ -191,8 +436,10 @@ export default function Page() {
 
             {/* CTA Button */}
             <motion.a
-              href="/contact#quote"
-              className={`block w-full text-center py-4 rounded-xl font-semibold transition-all duration-300 mt-8 ${
+              href={plan.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block w-full text-center py-4 rounded-xl font-semibold transition-all duration-300 ${
                 plan.popular
                   ? "bg-[#D4A514] text-black hover:bg-[#B8941F]"
                   : "bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/80"
@@ -200,97 +447,10 @@ export default function Page() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Get Started
+              Order Now
             </motion.a>
           </motion.div>
         ))}
-      </section>
-
-      {/* Add-on Services */}
-      <section className="mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
-            Add-on Services
-          </h2>
-          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Enhance your project with these additional services
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {addOnServices.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-              className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-6 hover:shadow-lg transition-all duration-300"
-            >
-              <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
-                {service.name}
-              </h3>
-              <p className="text-[var(--text-secondary)] text-sm mb-4">
-                {service.description}
-              </p>
-              <div className="text-2xl font-bold text-[#D4A514]">
-                {service.price}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
-            Frequently Asked Questions
-          </h2>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto space-y-6">
-          {[
-            {
-              q: "What payment methods do you accept?",
-              a: "We accept PayPal, bank transfers, and major credit cards. Payment is typically 50% upfront and 50% upon delivery.",
-            },
-            {
-              q: "Do you offer discounts for bulk projects?",
-              a: "Yes! We offer 10% discount for 3+ projects and 15% discount for 5+ projects booked together.",
-            },
-            {
-              q: "What if I need changes after delivery?",
-              a: "Each plan includes a specific number of revisions. Additional revisions can be purchased as add-on services.",
-            },
-            {
-              q: "How do you handle project files?",
-              a: "We provide secure file transfer links and maintain project files for 30 days after delivery. Extended storage available upon request.",
-            },
-          ].map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-              className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-6"
-            >
-              <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                {faq.q}
-              </h3>
-              <p className="text-[var(--text-secondary)]">{faq.a}</p>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
       {/* CTA Section */}
@@ -309,7 +469,9 @@ export default function Page() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.a
-            href="/contact#quote"
+            href="https://www.fiverr.com/users/mehediemu"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#D4A514] text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#B8941F] transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
