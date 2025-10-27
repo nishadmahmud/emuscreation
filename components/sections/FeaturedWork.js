@@ -11,10 +11,7 @@ const featuredProjects = [
     category: "Wedding",
     description: "A romantic destination wedding captured in cinematic style with emotional storytelling.",
     thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/wedding.mp4",
-    duration: "5:30",
-    views: "2.3K",
-    likes: "156",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/ffa9c0e4189229ae327971065afe5be8-1758403289721/Promo%20ECP",
     featured: true
   },
   {
@@ -23,10 +20,7 @@ const featuredProjects = [
     category: "Documentary",
     description: "Documentary Film And Reunion,Its a Sweet past collage reunion documentary",
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/documentary.mp4",
-    duration: "8:45",
-    views: "15.7K",
-    likes: "892",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/rziq7wpgnwplyue72msk",
     featured: true
   },
   {
@@ -35,10 +29,7 @@ const featuredProjects = [
     category: "Reels",
     description: "Cinematic Car Reels for car lovers! With full cinematic vibes, trendy speed ramps and perfect beat sync",
     thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/car.mp4",
-    duration: "0:30",
-    views: "45.2K",
-    likes: "3.1K",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/0227b73948fc938c4138c1b899db4140-1744410116710/car",
     featured: true
   },
   {
@@ -47,7 +38,7 @@ const featuredProjects = [
     category: "Corporate",
     description: "This is an app promotional video that we've produced. With full cinematic vibes, trendy speed ramps and perfect beat sync. ",
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/app.mp4",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/i6b9fcdtlvpwvwo53hem",
     duration: "3:20",
     views: "8.9K",
     likes: "234",
@@ -59,10 +50,7 @@ const featuredProjects = [
     category: "YouTube",
     description: "Diverse range of VFX,Sound mixing, music and storytelling techniques to dynamically shift the tone and atmosphere throughout the experience",
     thumbnail: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/short-film.mp4",
-    duration: "12:15",
-    views: "67.3K",
-    likes: "4.2K",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/ww7jfos5qq6fh6stmd0t",
     featured: false
   },
   {
@@ -71,10 +59,7 @@ const featuredProjects = [
     category: "YouTube",
     description: "This is a 1-minute movie trailer edit for 'Upcoming Challenges,' a short film about next-generation problems. I used AI to enhance the cinematic visuals.",
     thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/documentary2.mp4",
-    duration: "4:10",
-    views: "23.8K",
-    likes: "1.7K",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328",
     featured: false
   }
 ];
@@ -242,12 +227,12 @@ export default function FeaturedWork() {
               <div className="flex items-center justify-between text-xs text-[var(--text-secondary)]">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
-                    <FaEye />
-                    <span>{project.views}</span>
+                    {/* <FaEye />
+                    <span>{project.views}</span> */}
                   </div>
                   <div className="flex items-center gap-1">
-                    <FaHeart />
-                    <span>{project.likes}</span>
+                    {/* <FaHeart />
+                    <span>{project.likes}</span> */}
                   </div>
                 </div>
                 <span className="bg-[var(--bg-elevated)] px-2 py-1 rounded text-xs">

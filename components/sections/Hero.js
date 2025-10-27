@@ -46,6 +46,8 @@ return (
       >
         Weddings, Reels, YouTube & Travel — cinematic edits with crisp color and clean sound.
       </motion.p>
+
+      
       <motion.div 
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
