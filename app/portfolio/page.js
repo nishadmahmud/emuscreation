@@ -20,11 +20,7 @@ const portfolioData = [
     title: "Sarah & Michael's Wedding",
     category: "Wedding",
     thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/wedding.mp4",
-    duration: "5:30",
-    views: "2.3K",
-    likes: "156",
-    date: "2024-01-15",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/ffa9c0e4189229ae327971065afe5be8-1758403289721/Promo%20ECP",
     description: "A romantic destination wedding captured in cinematic style with emotional storytelling.",
     tools: ["Adobe Premiere Pro", "DaVinci Resolve", "After Effects"],
     musicSource: "Licensed from Artlist",
@@ -41,11 +37,7 @@ const portfolioData = [
     title: "Documentary Film",
     category: "Documentary",
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/documentary.mp4",
-    duration: "8:45",
-    views: "15.7K",
-    likes: "892",
-    date: "2024-01-10",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/rziq7wpgnwplyue72msk",
     description: "Documentary Film And Reunion,Its a Sweet past collage reunion documentary",
     tools: ["Final Cut Pro", "DaVinci Resolve", "Motion"],
     musicSource: "Epidemic Sound",
@@ -62,11 +54,7 @@ const portfolioData = [
     title: "Car Promo Video",
     category: "Reels",
     thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/car.mp4",
-    duration: "0:30",
-    views: "45.2K",
-    likes: "3.1K",
-    date: "2024-01-08",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/0227b73948fc938c4138c1b899db4140-1744410116710/car",
     description: "Cinematic Car Reels for car lovers! With full cinematic vibes, trendy speed ramps and perfect beat sync",
     tools: ["Adobe Premiere Pro", "After Effects"],
     musicSource: "Instagram Music Library",
@@ -83,11 +71,7 @@ const portfolioData = [
     title: "App Promo Video",
     category: "Corporate",
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/app.mp4",
-    duration: "3:20",
-    views: "8.9K",
-    likes: "234",
-    date: "2024-01-05",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/i6b9fcdtlvpwvwo53hem",
     description: "This is an app promotional video that we've produced. With full cinematic vibes, trendy speed ramps and perfect beat sync.",
     tools: ["Adobe Premiere Pro", "DaVinci Resolve"],
     musicSource: "Premium Beat",
@@ -104,11 +88,7 @@ const portfolioData = [
     title: "Short film trailer",
     category: "YouTube",
     thumbnail: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/short-film.mp4",
-    duration: "12:15",
-    views: "67.3K",
-    likes: "4.2K",
-    date: "2024-01-03",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/ww7jfos5qq6fh6stmd0t",
     description: "Diverse range of VFX,Sound mixing, music and storytelling techniques to dynamically shift the tone and atmosphere throughout the experience",
     tools: ["Final Cut Pro", "Motion", "Compressor"],
     musicSource: "AudioJungle",
@@ -125,11 +105,7 @@ const portfolioData = [
     title: "Documentary Film",
     category: "YouTube",
     thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "/documentary2.mp4",
-    duration: "4:10",
-    views: "23.8K",
-    likes: "1.7K",
-    date: "2024-01-01",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328",
     description: "This is a 1-minute movie trailer edit for 'Upcoming Challenges,' a short film about next-generation problems. I used AI to enhance the cinematic visuals.",
     tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
     musicSource: "Original Track",
@@ -143,44 +119,36 @@ const portfolioData = [
   },
   {
     id: 7,
-    title: "Product Launch Campaign",
-    category: "Corporate",
-    thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456795",
-    duration: "2:45",
-    views: "7.4K",
-    likes: "456",
-    date: "2023-12-28",
-    description: "Dynamic product launch video with modern editing and compelling storytelling.",
+    title: "Motivational Reel Video Edit",
+    category: "Reels",
+    thumbnail: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/99c7fa23546bc01bdac2dbf76134f5ee-1744791368136/Fiverr%20sample%20reel",
+    description: "I did this as a test project to showcase how I edit motivational content, so you can get a clear idea of my editing skills.",
     tools: ["Adobe Premiere Pro", "After Effects"],
-    musicSource: "Premium Beat",
-    turnaround: "5 days",
+    musicSource: "Licensed Motivational Track",
+    turnaround: "2 days",
     featured: false,
     caseStudy: {
-      goal: "Create an exciting product launch video that generates buzz and drives sales",
-      approach: "Used dynamic editing, product showcases, and compelling storytelling techniques",
-      result: "Video contributed to 40% increase in pre-orders and strong social media engagement.",
+      goal: "Create an inspiring motivational reel that demonstrates professional editing capabilities",
+      approach: "Used dynamic cuts, impactful typography, and emotionally resonant music to create an inspiring narrative",
+      result: "Successfully showcased editing style and attracted new clients seeking motivational content.",
     },
   },
   {
     id: 8,
-    title: "Lifestyle Reels Collection",
+    title: "Sports Reel Video Edit",
     category: "Reels",
-    thumbnail: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=400&fit=crop&crop=center",
-    videoUrl: "https://player.vimeo.com/video/123456796",
-    duration: "0:45",
-    views: "19.7K",
-    likes: "1.1K",
-    date: "2023-12-25",
-    description: "Collection of lifestyle reels showcasing daily routines and wellness content.",
+    thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=400&fit=crop&crop=center",
+    videoUrl: "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/dbac47ac335f465985a925456540b1b8-1747646984877/MOJO-%2050%20-%20%202",
+    description: "It's a sports reel that highlights the intensity of the game and players' performance — enhanced with professional cuts, beat-synced music, and dynamic transitions to keep it fast-paced and engaging.",
     tools: ["Adobe Premiere Pro", "After Effects"],
-    musicSource: "Instagram Music Library",
+    musicSource: "High-Energy Sports Track",
     turnaround: "3 days",
     featured: false,
     caseStudy: {
-      goal: "Create relatable lifestyle content that resonates with target audience",
-      approach: "Used authentic storytelling, natural lighting, and trending audio to maximize engagement",
-      result: "Reels averaged 19K+ views and significantly increased follower engagement rate.",
+      goal: "Create an adrenaline-pumping sports reel that captures the intensity and excitement of the game",
+      approach: "Used fast-paced editing, beat-synced transitions, and dynamic effects to match the energy of sports action",
+      result: "Reel effectively showcased the game's intensity and received positive feedback for its engaging pace.",
     },
   },
 ];
@@ -200,19 +168,16 @@ export default function PortfolioPage() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const videoRefs = useRef({});
 
-  const filteredProjects =
-    activeCategory === "All"
-      ? portfolioData
-      : portfolioData.filter((project) => project.category === activeCategory);
-
-  const featuredProjects = portfolioData.filter((project) => project.featured);
-
   useEffect(() => {
+    console.log('hoveredProject changed to:', hoveredProject);
+    console.log('Available video refs:', Object.keys(videoRefs.current));
+    
     Object.keys(videoRefs.current).forEach(key => {
       const video = videoRefs.current[key];
       if (video) {
         if (hoveredProject === parseInt(key)) {
-          video.play();
+          console.log(`Playing video for project ${key}`);
+          video.play().catch(err => console.log(`Video ${key} play failed:`, err));
         } else {
           video.pause();
           video.currentTime = 0;
@@ -220,6 +185,13 @@ export default function PortfolioPage() {
       }
     });
   }, [hoveredProject]);
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? portfolioData
+      : portfolioData.filter((project) => project.category === activeCategory);
+
+  const featuredProjects = portfolioData.filter((project) => project.featured);
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
@@ -311,13 +283,20 @@ export default function PortfolioPage() {
                     <div className="relative aspect-video overflow-hidden">
                       {project.videoUrl && project.videoUrl !== "#" && !project.videoUrl.includes("vimeo") ? (
                         <video
-                          ref={(el) => videoRefs.current[project.id] = el}
+                          ref={(el) => {
+                            if (el) {
+                              videoRefs.current[project.id] = el;
+                              console.log(`Featured video ref set for project ${project.id}:`, project.videoUrl);
+                            }
+                          }}
                           src={project.videoUrl}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           muted
                           loop
                           playsInline
                           preload="metadata"
+                          onLoadedMetadata={() => console.log(`Featured video ${project.id} metadata loaded`)}
+                          onError={(e) => console.error(`Featured video ${project.id} error:`, e)}
                         />
                       ) : (
                         <Image
@@ -351,7 +330,7 @@ export default function PortfolioPage() {
 
                       {/* Duration */}
                       <div className="absolute top-4 right-4 bg-black/80 text-white px-2 py-1 rounded text-sm">
-                        {project.duration}
+                        {/* {project.duration} */}
                       </div>
                     </div>
 
@@ -362,7 +341,7 @@ export default function PortfolioPage() {
                           {project.category}
                         </span>
                         <span className="text-xs text-[var(--text-secondary)]">
-                          {project.date}
+                          {/* {project.date} */}
                         </span>
                       </div>
 
@@ -378,12 +357,12 @@ export default function PortfolioPage() {
                       <div className="flex items-center justify-between text-sm text-[var(--text-secondary)]">
                         <div className="flex items-center gap-4">
                           <div className="flex items-center gap-1">
-                            <FaEye className="text-xs" />
-                            <span>{project.views}</span>
+                            {/* <FaEye className="text-xs" /> */}
+                            <span>{/* {project.views} */}</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <FaThumbsUp className="text-xs" />
-                            <span>{project.likes}</span>
+                            {/* <FaThumbsUp className="text-xs" /> */}
+                            <span>{/* {project.likes} */}</span>
                           </div>
                         </div>
                         <FaExternalLinkAlt className="text-xs group-hover:text-[#D4A514] transition-colors duration-300" />
@@ -479,7 +458,7 @@ export default function PortfolioPage() {
 
                       {/* Duration */}
                       <div className="absolute top-3 right-3 bg-black/80 text-white px-2 py-1 rounded text-xs">
-                        {project.duration}
+                        {/* {project.duration} */}
                       </div>
                     </div>
 
@@ -503,12 +482,12 @@ export default function PortfolioPage() {
                       <div className="flex items-center justify-between text-xs text-[var(--text-secondary)]">
                         <div className="flex items-center gap-3">
                           <div className="flex items-center gap-1">
-                            <FaEye className="text-xs" />
-                            <span>{project.views}</span>
+                            {/* <FaEye className="text-xs" /> */}
+                            <span>{/* {project.views} */}</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <FaThumbsUp className="text-xs" />
-                            <span>{project.likes}</span>
+                            {/* <FaThumbsUp className="text-xs" /> */}
+                            <span>{/* {project.likes} */}</span>
                           </div>
                         </div>
                         <FaExternalLinkAlt className="text-xs group-hover:text-[#D4A514] transition-colors duration-300" />
@@ -620,12 +599,12 @@ export default function PortfolioPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 text-sm text-[var(--text-secondary)]">
                       <div className="flex items-center gap-1">
-                        <FaEye className="text-xs" />
-                        <span>{project.views}</span>
+                        {/* <FaEye className="text-xs" /> */}
+                        <span>{/* {project.views} */}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <FaThumbsUp className="text-xs" />
-                        <span>{project.likes}</span>
+                        {/* <FaThumbsUp className="text-xs" /> */}
+                        <span>{/* {project.likes} */  }</span>
                       </div>
                     </div>
                     <button className="bg-[#D4A514] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#B8941F] transition-colors duration-300">

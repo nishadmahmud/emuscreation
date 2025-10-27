@@ -123,7 +123,7 @@ export default function FeaturedWork() {
       </motion.div>
 
       {/* Category Filter */}
-      <motion.div 
+      {/* <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -143,7 +143,7 @@ export default function FeaturedWork() {
             {category}
           </button>
         ))}
-      </motion.div>
+      </motion.div> */}
 
       {/* Projects Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
