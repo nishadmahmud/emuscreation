@@ -19,13 +19,19 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
   const isActive = (href) =>
     pathname === href || (href !== "/" && pathname.startsWith(href));
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current && 
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setOpen(false);
       }
     };
@@ -310,7 +316,7 @@ export default function Navbar() {
           </a>
         </div>
         <button
-          ref={menuRef}
+          ref={buttonRef}
           className="md:hidden ml-auto inline-flex items-center justify-center rounded border border-[var(--border-subtle)] px-3 py-2 text-sm hover:bg-[var(--bg-elevated)] text-[var(--text-primary)]"
           aria-label="Toggle menu"
           aria-expanded={open ? "true" : "false"}
@@ -321,21 +327,71 @@ export default function Navbar() {
       </div>
       {open ? (
         <div
+          ref={menuRef}
           className="absolute left-0 right-0 top-16 md:hidden border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/95 shadow-2xl"
           style={{ backdropFilter: "blur(40px)" }}
         >
           <div className="px-4 py-4 flex flex-col gap-3 text-sm">
-            <Link
-              href="/services"
-              className={
-                isActive("/services")
-                  ? "text-[var(--text-primary)] font-semibold"
-                  : "text-[var(--text-secondary)]"
-              }
-              onClick={() => setOpen(false)}
-            >
-              Services
-            </Link>
+            {/* Services Dropdown */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setServicesOpen((v) => !v)}
+                className={`w-full flex items-center justify-between ${
+                  isActive("/services")
+                    ? "text-[var(--text-primary)] font-semibold"
+                    : "text-[var(--text-secondary)]"
+                }`}
+              >
+                Services
+                <span
+                  className={`transition-transform ${
+                    servicesOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  ▾
+                </span>
+              </button>
+              {servicesOpen && (
+                <div className="mt-2 ml-4 flex flex-col gap-2">
+                  <Link
+                    href="/services/wedding"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1"
+                    onClick={() => setOpen(false)}
+                  >
+                    Wedding Editing
+                  </Link>
+                  <Link
+                    href="/services/reels"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1"
+                    onClick={() => setOpen(false)}
+                  >
+                    Reels & Short-Form
+                  </Link>
+                  <Link
+                    href="/services/youtube"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1"
+                    onClick={() => setOpen(false)}
+                  >
+                    YouTube Editing
+                  </Link>
+                  <Link
+                    href="/services/travel"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1"
+                    onClick={() => setOpen(false)}
+                  >
+                    Travel Vlog Editing
+                  </Link>
+                  <Link
+                    href="/services/corporate"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1"
+                    onClick={() => setOpen(false)}
+                  >
+                    Corporate/Documentary
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link
               href="/portfolio"
               className={

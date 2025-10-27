@@ -163,7 +163,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Header */}
-      <section className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <section className="pt-16 pb-8 px-4 sm:px-4 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
