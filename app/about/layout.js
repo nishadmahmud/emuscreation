@@ -1,5 +1,4 @@
 import { generateMetadata } from '../../lib/seo';
-import { generateBreadcrumbSchema } from '../../lib/schema';
 
 export const metadata = generateMetadata({
   title: 'About Us',
@@ -14,22 +13,6 @@ export const metadata = generateMetadata({
   ],
 });
 
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'About', url: '/about' },
-]);
-
 export default function AboutLayout({ children }) {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-      {children}
-    </>
-  );
+  return children;
 }
-

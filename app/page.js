@@ -6,7 +6,6 @@ import SocialProof from "../components/sections/SocialProof";
 import MiniProcess from "../components/sections/MiniProcess";
 import FinalCTA from "../components/sections/FinalCTA";
 import { generateMetadata } from "../lib/seo";
-import { organizationSchema, websiteSchema } from "../lib/schema";
 
 export const metadata = generateMetadata({
   title: "Professional Video Editing Services",
@@ -23,24 +22,14 @@ export const metadata = generateMetadata({
 
 export default function Home() {
   return (
-    <>
-      {/* Schema.org structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([organizationSchema, websiteSchema]),
-        }}
-      />
-      
-      <div>
-        <Hero />
-        <ServicesSnapshot />
-        <WhyChooseUs />
-        <FeaturedWork />
-        <SocialProof />
-        <MiniProcess />
-        <FinalCTA />
-      </div>
-    </>
+    <div>
+      <Hero />
+      <ServicesSnapshot />
+      <WhyChooseUs />
+      <FeaturedWork />
+      <SocialProof />
+      <MiniProcess />
+      <FinalCTA />
+    </div>
   );
 }

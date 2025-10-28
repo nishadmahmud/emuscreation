@@ -1,5 +1,4 @@
 import { generateMetadata } from '../../lib/seo';
-import { generateBreadcrumbSchema, generateReviewSchema } from '../../lib/schema';
 
 export const metadata = generateMetadata({
   title: 'Client Testimonials & Reviews',
@@ -14,27 +13,6 @@ export const metadata = generateMetadata({
   ],
 });
 
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'Testimonials', url: '/testimonials' },
-]);
-
-const reviewSchema = generateReviewSchema({
-  averageRating: '4.9',
-  count: 150,
-});
-
 export default function TestimonialsLayout({ children }) {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([breadcrumbSchema, reviewSchema]),
-        }}
-      />
-      {children}
-    </>
-  );
+  return children;
 }
-

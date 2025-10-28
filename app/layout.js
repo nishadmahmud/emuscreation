@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Emu’s Creation",
+  title: "Emu's Creation",
   description:
     "Professional video editing studio — Weddings, Reels, YouTube & more.",
 };

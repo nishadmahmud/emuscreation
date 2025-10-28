@@ -1,5 +1,4 @@
 import { generateMetadata } from '../../lib/seo';
-import { generateBreadcrumbSchema } from '../../lib/schema';
 
 export const metadata = generateMetadata({
   title: 'Our Editing Process',
@@ -14,22 +13,6 @@ export const metadata = generateMetadata({
   ],
 });
 
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'Process', url: '/process' },
-]);
-
 export default function ProcessLayout({ children }) {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-      {children}
-    </>
-  );
+  return children;
 }
-
