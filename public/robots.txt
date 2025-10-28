@@ -1,0 +1,26 @@
+# Robots.txt for Emu's Creation
+# Allow all crawlers to index all content
+
+User-agent: *
+Allow: /
+
+# Disallow admin or API routes
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap location
+Sitemap: https://emuscreation.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Additional directives for specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
