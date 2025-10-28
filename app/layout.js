@@ -34,7 +34,9 @@ export default function RootLayout({ children }) {
               </div>
             </header>
             <main className="flex-1">
-              <div className="mx-auto w-full max-w-7xl px-4 py-4">{children}</div>
+              <div className="mx-auto w-full max-w-7xl px-4 py-4">
+                {children}
+              </div>
             </main>
             <footer className="mt-12 border-t border-[var(--border-subtle)]">
               <div className="mx-auto w-full max-w-7xl px-4 py-8">

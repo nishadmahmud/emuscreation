@@ -292,7 +292,14 @@ const pricingData = {
   ],
 };
 
-const categories = ["All", "Wedding", "Reels", "YouTube", "Travel", "Corporate"];
+const categories = [
+  "All",
+  "Wedding",
+  "Reels",
+  "YouTube",
+  "Travel",
+  "Corporate",
+];
 
 export default function Page() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -358,13 +365,15 @@ export default function Page() {
       </motion.div>
 
       {/* Pricing Cards */}
-      <section className={`grid gap-8 mb-20 ${
-        filteredPlans.length === 1 
-          ? "grid-cols-1 max-w-md mx-auto" 
-          : filteredPlans.length === 2
-          ? "grid-cols-1 md:grid-cols-2"
-          : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      }`}>
+      <section
+        className={`grid gap-8 mb-20 ${
+          filteredPlans.length === 1
+            ? "grid-cols-1 max-w-md mx-auto"
+            : filteredPlans.length === 2
+            ? "grid-cols-1 md:grid-cols-2"
+            : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        }`}
+      >
         {filteredPlans.map((plan, index) => (
           <motion.div
             key={plan.id}

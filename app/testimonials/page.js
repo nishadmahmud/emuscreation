@@ -70,7 +70,7 @@ export default function Page() {
     <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-8">
       <header className="mb-10 sm:mb-12">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text-primary)]">
-          Testimonials / Clients
+          Testimonials
         </h1>
         <p className="mt-3 text-[var(--text-secondary)]">
           What our clients say about our video editing services across weddings,
@@ -82,7 +82,7 @@ export default function Page() {
       <section className="mb-12 grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-5 text-center">
           <div className="text-3xl font-semibold tracking-tight text-[var(--text-primary)]">
-            4.9
+            4.7
             <span className="ml-1 text-base align-top text-[var(--text-secondary)]">
               /5
             </span>
@@ -93,7 +93,7 @@ export default function Page() {
         </div>
         <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-5 text-center">
           <div className="text-3xl font-semibold tracking-tight text-[var(--text-primary)]">
-            98%
+            94%
             <span className="ml-1 text-base align-top text-[var(--text-secondary)]">
               +
             </span>
@@ -115,7 +115,7 @@ export default function Page() {
         </div>
         <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-5 text-center">
           <div className="text-3xl font-semibold tracking-tight text-[var(--text-primary)]">
-            24h
+            1h
             <span className="ml-1 text-base align-top text-[var(--text-secondary)]">
               avg
             </span>

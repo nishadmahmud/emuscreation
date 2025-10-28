@@ -6,7 +6,7 @@ export default function Page() {
           About Us
         </h1>
         <p className="mt-3 text-[var(--text-secondary)]">
-          Cinematic post‑production for weddings, reels, YouTube, travel, and
+          Cinematic post-production for weddings, reels, YouTube, travel, and
           corporate stories - crafted with taste, speed, and clear
           communication.
         </p>
@@ -58,7 +58,7 @@ export default function Page() {
           <p className="mt-3 text-[var(--text-secondary)]">
             Emu&apos;s Creation is a premium video editing studio serving global
             clients across platforms - Fiverr, Upwork, and direct. We specialize
-            in emotion‑driven wedding edits, scroll‑stopping shorts,
+            in emotion-driven wedding edits, scroll-stopping shorts,
             channel‑growing YouTube videos, and polished corporate pieces.
           </p>
           <p className="mt-3 text-[var(--text-secondary)]">
@@ -72,7 +72,7 @@ export default function Page() {
               Wedding highlight + feature films
             </li>
             <li className="list-disc list-inside">
-              Short‑form reels with captions
+              Short-form reels with captions
             </li>
             <li className="list-disc list-inside">YouTube edits for growth</li>
             <li className="list-disc list-inside">
@@ -122,7 +122,7 @@ export default function Page() {
             Reels & Shorts
           </h3>
           <p className="mt-2 text-[var(--text-secondary)]">
-            Fast cuts, captions, beat‑matched pacing, platform‑ready aspect
+            Fast cuts, captions, beat-matched pacing, platform-ready aspect
             ratios.
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function Page() {
             YouTube & Corporate
           </h3>
           <p className="mt-2 text-[var(--text-secondary)]">
-            Channel‑growth edits, polished promos, docs, brand‑consistent
+            Channel-growth edits, polished promos, docs, brand-consistent
             graphics and sound.
           </p>
         </div>

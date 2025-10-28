@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLinkedin, FaYoutube, FaFacebook, FaWhatsapp, FaVimeo, FaMapMarkerAlt, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaYoutube,
+  FaFacebook,
+  FaWhatsapp,
+  FaVimeo,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 export default function ContactPage() {
   return (
@@ -18,7 +26,8 @@ export default function ContactPage() {
               Get in <span className="text-[#D4A514]">Touch</span>
             </h1>
             <p className="text-xl text-[var(--text-secondary)] mb-6">
-              Ready to bring your vision to life? Connect with us through any of these channels.
+              Ready to bring your vision to life? Connect with us through any of
+              these channels.
             </p>
           </motion.div>
         </div>
@@ -28,7 +37,6 @@ export default function ContactPage() {
       <section className="py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             {/* Fiverr Account */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -43,7 +51,8 @@ export default function ContactPage() {
                 Fiverr Account
               </h3>
               <p className="text-[var(--text-secondary)] mb-4 text-sm">
-                Get professional video editing services with guaranteed quality and fast delivery.
+                Get professional video editing services with guaranteed quality
+                and fast delivery.
               </p>
               <a
                 href="https://www.fiverr.com/users/mehediemu"
@@ -70,7 +79,8 @@ export default function ContactPage() {
                 WhatsApp
               </h3>
               <p className="text-[var(--text-secondary)] mb-4 text-sm">
-                Chat with us directly for quick inquiries and project discussions.
+                Chat with us directly for quick inquiries and project
+                discussions.
               </p>
               <a
                 href="https://wa.me/8801743025398"
@@ -121,9 +131,10 @@ export default function ContactPage() {
               Follow Our Work
             </h2>
             <p className="text-[var(--text-secondary)] mb-6">
-              Stay updated with our latest projects and behind-the-scenes content.
+              Stay updated with our latest projects and behind-the-scenes
+              content.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-6">
               {/* LinkedIn */}
               <motion.a
@@ -193,7 +204,8 @@ export default function ContactPage() {
               Ready to Start Your Project?
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-6">
-              Choose your preferred way to connect and let&apos;s bring your vision to life.
+              Choose your preferred way to connect and let&apos;s bring your
+              vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

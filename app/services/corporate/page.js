@@ -194,7 +194,10 @@ export default function CorporatePage() {
   }, [isHovered]);
 
   const handleVideoClick = () => {
-    window.open("https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328", '_blank');
+    window.open(
+      "https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/v1/video-attachments/project_item/attachment/d0369548999c4f00742a1d9acaa0669c-1743532436130/0328",
+      "_blank"
+    );
   };
 
   return (
@@ -230,7 +233,7 @@ export default function CorporatePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
+                <a
                   href="https://www.fiverr.com/mehediemu/do-documentary-video-editing-and-short-film?context_referrer=seller_page&ref_ctx_id=19c1255f9bbd40899c37d71793e77bf8&pckg_id=1&pos=9&imp_id=70d18daa-f789-4afc-ba62-facb65cd8e74"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -289,7 +292,7 @@ export default function CorporatePage() {
               Choose the perfect package for your corporate film editing needs
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Package 1 - Basic */}
             <motion.div
@@ -309,35 +312,49 @@ export default function CorporatePage() {
                   1 Min Film edit - Short Teaser (1-2 min)
                 </p>
               </div>
-              
+
               <div className="space-y-3 mb-8 flex-grow">
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">7-day delivery</span>
+                  <span className="text-[var(--text-primary)]">
+                    7-day delivery
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">2 Revisions</span>
+                  <span className="text-[var(--text-primary)]">
+                    2 Revisions
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Up to 45 minutes of footage provided</span>
+                  <span className="text-[var(--text-primary)]">
+                    Up to 45 minutes of footage provided
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                  <span className="text-[var(--text-primary)]">
+                    Up to 1 minute running time
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Color grading</span>
+                  <span className="text-[var(--text-primary)]">
+                    Color grading
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                  <span className="text-[var(--text-primary)]">
+                    Sound design & mixing
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                  <span className="text-[var(--text-primary)]">
+                    Motion graphics
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
@@ -345,18 +362,24 @@ export default function CorporatePage() {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                  <span className="text-[var(--text-primary)]">
+                    Thumbnail included
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Include source file</span>
+                  <span className="text-[var(--text-primary)]">
+                    Include source file
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">1 Commercially licensed music track</span>
+                  <span className="text-[var(--text-primary)]">
+                    1 Commercially licensed music track
+                  </span>
                 </div>
               </div>
-              
+
               <a
                 href="https://www.fiverr.com/users/mehediemu"
                 target="_blank"
@@ -379,7 +402,7 @@ export default function CorporatePage() {
                   MOST POPULAR
                 </span>
               </div>
-              
+
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
                   Standard Package
@@ -391,35 +414,49 @@ export default function CorporatePage() {
                   5 Min film edit - Highlight (3-5 min)
                 </p>
               </div>
-              
+
               <div className="space-y-3 mb-8 flex-grow">
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">10-day delivery</span>
+                  <span className="text-[var(--text-primary)]">
+                    10-day delivery
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">3 Revisions</span>
+                  <span className="text-[var(--text-primary)]">
+                    3 Revisions
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Up to 300 minutes of footage provided</span>
+                  <span className="text-[var(--text-primary)]">
+                    Up to 300 minutes of footage provided
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                  <span className="text-[var(--text-primary)]">
+                    Up to 1 minute running time
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Color grading</span>
+                  <span className="text-[var(--text-primary)]">
+                    Color grading
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                  <span className="text-[var(--text-primary)]">
+                    Sound design & mixing
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                  <span className="text-[var(--text-primary)]">
+                    Motion graphics
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
@@ -427,18 +464,24 @@ export default function CorporatePage() {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                  <span className="text-[var(--text-primary)]">
+                    Thumbnail included
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Include source file</span>
+                  <span className="text-[var(--text-primary)]">
+                    Include source file
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">3 Commercially licensed music tracks</span>
+                  <span className="text-[var(--text-primary)]">
+                    3 Commercially licensed music tracks
+                  </span>
                 </div>
               </div>
-              
+
               <a
                 href="https://www.fiverr.com/users/mehediemu"
                 target="_blank"
@@ -467,35 +510,49 @@ export default function CorporatePage() {
                   10 Min film edit - Full Film (up to 60 min)
                 </p>
               </div>
-              
+
               <div className="space-y-3 mb-8 flex-grow">
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">10-day delivery</span>
+                  <span className="text-[var(--text-primary)]">
+                    10-day delivery
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">4 Revisions</span>
+                  <span className="text-[var(--text-primary)]">
+                    4 Revisions
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Unlimited minutes of footage provided</span>
+                  <span className="text-[var(--text-primary)]">
+                    Unlimited minutes of footage provided
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Up to 1 minute running time</span>
+                  <span className="text-[var(--text-primary)]">
+                    Up to 1 minute running time
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Color grading</span>
+                  <span className="text-[var(--text-primary)]">
+                    Color grading
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Sound design & mixing</span>
+                  <span className="text-[var(--text-primary)]">
+                    Sound design & mixing
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Motion graphics</span>
+                  <span className="text-[var(--text-primary)]">
+                    Motion graphics
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
@@ -503,18 +560,24 @@ export default function CorporatePage() {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Thumbnail included</span>
+                  <span className="text-[var(--text-primary)]">
+                    Thumbnail included
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">Include source file</span>
+                  <span className="text-[var(--text-primary)]">
+                    Include source file
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <FaCheck className="text-green-400 flex-shrink-0" />
-                  <span className="text-[var(--text-primary)]">6 Commercially licensed music tracks</span>
+                  <span className="text-[var(--text-primary)]">
+                    6 Commercially licensed music tracks
+                  </span>
                 </div>
               </div>
-              
+
               <a
                 href="https://www.fiverr.com/users/mehediemu"
                 target="_blank"
@@ -698,7 +761,7 @@ export default function CorporatePage() {
               showcase your brand, and deliver your message with maximum impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="https://www.fiverr.com/users/mehediemu"
                 target="_blank"
                 rel="noopener noreferrer"
