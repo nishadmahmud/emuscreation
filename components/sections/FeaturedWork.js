@@ -96,7 +96,7 @@ export default function FeaturedWork() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
@@ -139,8 +139,8 @@ export default function FeaturedWork() {
             animate={{ 
               opacity: 1,
               transition: { 
-                duration: 0.2,
-                delay: index * 0.02
+                duration: 0.16,
+                delay: index * 0.015
               }
             }}
             onHoverStart={() => setHoveredProject(project.id)}
@@ -176,7 +176,7 @@ export default function FeaturedWork() {
               )}
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               
               {/* Play Button */}
               {!(project.videoUrl && project.videoUrl !== "#") && (
@@ -187,7 +187,7 @@ export default function FeaturedWork() {
                     scale: hoveredProject === project.id ? 1 : 0,
                     opacity: hoveredProject === project.id ? 1 : 0
                   }}
-                  transition={{ duration: 0.1 }}
+                  transition={{ duration: 0.12 }}
                 >
                   <div className="w-16 h-16 rounded-full bg-[#D4A514] flex items-center justify-center shadow-2xl">
                     <FaPlay className="text-black text-xl ml-1" />
@@ -267,7 +267,7 @@ export default function FeaturedWork() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.8, duration: 0.6 }}
+        transition={{ delay: 0.18, duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         className="mt-16 text-center"
       >
         <a

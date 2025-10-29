@@ -74,7 +74,7 @@ export default function SocialProof() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
@@ -95,8 +95,8 @@ export default function SocialProof() {
           visible: { 
             opacity: 1, 
             transition: { 
-              staggerChildren: 0.1,
-              delayChildren: 0.2
+              staggerChildren: 0.05,
+              delayChildren: 0.08
             } 
           } 
         }} 
@@ -110,7 +110,7 @@ export default function SocialProof() {
               visible: { 
                 opacity: 1, 
                 y: 0,
-                transition: { duration: 0.4, ease: "easeOut" }
+                transition: { duration: 0.22, ease: [0.22, 1, 0.36, 1] }
               } 
             }}
             className="text-center p-6 rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 transition-all duration-300"
@@ -134,8 +134,8 @@ export default function SocialProof() {
           visible: { 
             opacity: 1, 
             transition: { 
-              staggerChildren: 0.08,
-              delayChildren: 0.3
+              staggerChildren: 0.05,
+              delayChildren: 0.1
             } 
           } 
         }} 
@@ -149,12 +149,12 @@ export default function SocialProof() {
               visible: { 
                 opacity: 1, 
                 y: 0,
-                transition: { duration: 0.4, ease: "easeOut" }
+                transition: { duration: 0.22, ease: [0.22, 1, 0.36, 1] }
               } 
             }}
             whileHover={{ 
               y: -4,
-              transition: { duration: 0.2 }
+            transition: { duration: 0.15 }
             }}
             className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--bg-elevated)] to-[var(--bg-elevated)]/80 backdrop-blur-sm border border-[var(--border-subtle)] hover:border-[#D4A514]/30 p-6 transition-all duration-300 hover:shadow-lg"
           >
@@ -219,7 +219,7 @@ export default function SocialProof() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.6, duration: 0.4 }}
+        transition={{ delay: 0.16, duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
         className="mt-16 text-center"
       >
         <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#D4A514]/20 to-[#D4A514]/10 border border-[#D4A514]/30 backdrop-blur-sm">

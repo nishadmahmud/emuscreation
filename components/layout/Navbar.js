@@ -96,36 +96,36 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
                   transition={{ duration: 0.15 }}
-                  className="min-w-[220px] rounded-xl bg-[#15171B]/90 backdrop-blur border border-white/10 pt-3 pb-3 px-3 shadow-lg"
+                  className="min-w-[220px] rounded-xl bg-[var(--bg-elevated)]/90 backdrop-blur border border-[var(--border-subtle)] pt-3 pb-3 px-3 shadow-lg"
                 >
                   <div className="flex flex-col gap-2">
                     <Link
                       href="/services/wedding"
-                      className="px-3 py-2 rounded hover:bg-white/5"
+                      className="px-3 py-2 rounded text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/60"
                     >
                       Wedding Editing
                     </Link>
                     <Link
                       href="/services/reels"
-                      className="px-3 py-2 rounded hover:bg-white/5"
+                      className="px-3 py-2 rounded text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/60"
                     >
                       Reels & Short-Form
                     </Link>
                     <Link
                       href="/services/youtube"
-                      className="px-3 py-2 rounded hover:bg-white/5"
+                      className="px-3 py-2 rounded text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/60"
                     >
                       YouTube Editing
                     </Link>
                     <Link
                       href="/services/travel"
-                      className="px-3 py-2 rounded hover:bg-white/5"
+                      className="px-3 py-2 rounded text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/60"
                     >
                       Travel Vlog Editing
                     </Link>
                     <Link
                       href="/services/corporate"
-                      className="px-3 py-2 rounded hover:bg-white/5"
+                      className="px-3 py-2 rounded text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]/60"
                     >
                       Corporate/Documentary
                     </Link>

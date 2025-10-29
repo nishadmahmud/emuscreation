@@ -9,7 +9,7 @@ export default function FinalCTA() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
         className="relative overflow-hidden rounded-3xl border border-[#D4A514]/30 bg-gradient-to-br from-[#D4A514]/10 to-[#D4A514]/5 p-8 sm:p-12 backdrop-blur-sm"
       >
         {/* Glow */}
@@ -21,7 +21,7 @@ export default function FinalCTA() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.05 }}
+            transition={{ duration: 0.22, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4"
           >
             Ready to Elevate Your Content?
@@ -30,7 +30,7 @@ export default function FinalCTA() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
+            transition={{ duration: 0.22, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-[var(--text-secondary)] text-lg mb-8"
           >
             Get a fast, professional edit with cinematic polish — on time, every time.

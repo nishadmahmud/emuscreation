@@ -80,7 +80,7 @@ return (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
+    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     className="text-center mb-12"
   >
     <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
@@ -100,8 +100,8 @@ return (
       visible: { 
         opacity: 1, 
         transition: { 
-          staggerChildren: 0.08,
-          delayChildren: 0.1
+          staggerChildren: 0.04,
+          delayChildren: 0.06
         } 
       } 
     }} 
@@ -121,14 +121,14 @@ return (
               opacity: 1, 
               y: 0,
               transition: { 
-                duration: 0.4,
-                ease: "easeOut"
+                duration: 0.22,
+                ease: [0.22, 1, 0.36, 1]
               }
             } 
           }}
           whileHover={{ 
             y: -4,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.15 }
           }}
           className="group"
         >
@@ -199,7 +199,7 @@ return (
                 opacity: [0.3, 0.8, 0.3]
               }}
               transition={{ 
-                duration: 2, 
+                duration: 1.4, 
                 repeat: Infinity, 
                 delay: index * 0.3 
               }}
@@ -212,7 +212,7 @@ return (
                 opacity: [0.2, 0.6, 0.2]
               }}
               transition={{ 
-                duration: 1.5, 
+                duration: 1.1, 
                 repeat: Infinity, 
                 delay: index * 0.4 
               }}
@@ -236,14 +236,14 @@ return (
               opacity: 1, 
               y: 0,
               transition: { 
-                duration: 0.4,
-                ease: "easeOut"
+                duration: 0.22,
+                ease: [0.22, 1, 0.36, 1]
               }
             } 
           }}
           whileHover={{ 
             y: -4,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.15 }
           }}
           className="group"
         >
@@ -343,7 +343,7 @@ return (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay: 0.8, duration: 0.6 }}
+    transition={{ delay: 0.18, duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     className="mt-12 text-center"
   >
     <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#D4A514]/20 to-[#D4A514]/10 border border-[#D4A514]/30 backdrop-blur-sm">
